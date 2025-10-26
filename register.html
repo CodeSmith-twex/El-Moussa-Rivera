@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وتد الكيان العقارية - إنشاء حساب جديد</title>
+    <link rel="shortcut icon" href="images/شعار وتد.png" type="image/x-icon" />
+    <link rel="stylesheet" href="unified-styles.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .register-container {
+        display: grid;
+        grid-template-columns: 1.2fr 1.8fr;
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: var(--shadow-medium);
+        overflow: hidden;
+        margin-top: 3rem;
+        max-width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .register-features {
+        background: linear-gradient(160deg, var(--primary) 0%, #2c4446 100%);
+        padding: 3rem;
+        color: white;
+      }
+
+      .register-features h3 {
+        color: white;
+        margin-bottom: 2rem;
+        font-size: 1.5rem;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        font-size: 1.1rem;
+      }
+
+      .feature-item i {
+        color: var(--secondary);
+        font-size: 1.3rem;
+        width: 25px;
+      }
+
+      .register-form-wrapper {
+        padding: 3rem;
+      }
+
+      .input-with-icon {
+        position: relative;
+      }
+
+      .input-with-icon .form-control {
+        padding-right: 45px;
+      }
+
+      .input-with-icon i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray-dark);
+        transition: color 0.3s ease;
+      }
+
+      @media (max-width: 768px) {
+        .register-container {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- الرأس -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i><i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="properties.html">العقارات</a></li>
+          <li><a href="index.html#about-us">من نحن</a></li>
+          <li><a href="request-property.html">اطلب عقارك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="register.html">تسجيل</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- قسم نموذج التسجيل -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">إنشاء حساب جديد</h1>
+
+        <div class="register-container">
+          <div class="register-features">
+            <h3>مميزات التسجيل في وتد</h3>
+            <div class="feature-item">
+              <i class="fas fa-heart"></i>
+              <span>متابعة العقارات المفضلة لديك</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-bell"></i>
+              <span>الحصول على إشعارات بأحدث العروض</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-headset"></i>
+              <span>سهولة التواصل مع فريق المبيعات</span>
+            </div>
+            <div class="feature-item">
+              <i class="fas fa-save"></i>
+              <span>حفظ بيانات البحث الخاصة بك</span>
+            </div>
+          </div>
+
+          <div class="register-form-wrapper">
+            <form id="register-form">
+              <div class="form-group">
+                <label for="full_name" class="form-label">الاسم الكامل</label>
+                <div class="input-with-icon">
+                  <input
+                    type="text"
+                    id="full_name"
+                    class="form-control"
+                    required
+                  />
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <div class="input-with-icon">
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    required
+                  />
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="password" class="form-label">كلمة المرور</label>
+                <div class="input-with-icon">
+                  <input
+                    type="password"
+                    id="password"
+                    class="form-control"
+                    required
+                  />
+                  <i class="fas fa-lock"></i>
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                إنشاء حساب
+              </button>
+
+              <div
+                class="login-link"
+                style="text-align: center; margin-top: 1.5rem"
+              >
+                <a href="#">لديك حساب بالفعل؟ تسجيل الدخول</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div id="footer-placeholder">
+            <div class="footer-logo">
+              <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">العقارات</a></li>
+              <li><a href="index.html#about-us">من نحن</a></li>
+              <li><a href="request-property.html">اطلب عقارك</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="register.html">تسجيل</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
+              <p>هاتف: +966...</p>
+              <button class="btn btn-secondary" style="padding: 10px 15px">
+                <!-- زر واتساب -->
+                <a
+                  href="https://wa.me/966500000000"
+                  class="whatsapp-button"
+                  target="_blank"
+                  style=" font-size: 25px;"
+                >
+                <i class="fab fa-whatsapp"></i>
+                  تواصل معنا عبر الواتساب
+                </a>
+              </button>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ وتد العقارية</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="unified-script.js"></script>
+  </body>
+</html>

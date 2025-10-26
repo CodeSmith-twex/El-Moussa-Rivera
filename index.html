@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>وتد للتطوير العقاري - الصفحة الرئيسية</title>
+    <link rel="shortcut icon" href="images/شعار وتد.png" type="image/x-icon" />
+    <link rel="stylesheet" href="unified-styles.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Swiper.js CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body class="home">
+    <!-- الرأس -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="properties.html">العقارات</a></li>
+          <li><a href="index.html#about-us">من نحن</a></li>
+          <li><a href="request-property.html">اطلب عقارك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="register.html">تسجيل</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- القسم الرئيسي (Hero) -->
+    <section
+      class="hero"
+      style="
+        background-image: url('images/3c90a3ab-e014-4310-901b-0d857c0e80dc.png');
+      "
+    >
+      <div class="container hero-content">
+        <h1 class="hero-title">
+          عقارات، تمويل، استشارات... كل ما تحتاجه في مكان واحد!
+        </h1>
+        <p class="hero-subtitle">خطوتك الأولى نحو عقارك المثالي تبدأ هنا!</p>
+        <a href="properties.html" class="btn btn-secondary">مشاريع وتد</a>
+      </div>
+      <div class="hero-extra-text"></div>
+    </section>
+
+    <!-- قسم الخدمات -->
+    <section id="services" class="section">
+      <div class="container">
+        <h2 class="section-title">خدمات وتد</h2>
+        <p class="section-subtitle">حلول عقارية متكاملة تلبي احتياجاتك</p>
+
+        <div class="services-grid">
+          <div class="service-card">
+            <img
+              src="images/icon-legal.svg"
+              alt="الاستشارات العقارية"
+              class="service-icon"
+            />
+            <h3 class="service-title">الاستشارات العقارية</h3>
+            <p>نقدم لك أفضل الحلول والنصائح.</p>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="images/icon-marketing.svg"
+              alt="التسويق العقاري"
+              class="service-icon"
+            />
+            <h3 class="service-title">التسويق العقاري</h3>
+            <p>خطط تسويقية مبتكرة لبيع عقارك.</p>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="images/icon-care.svg"
+              alt="العناية بالعملاء"
+              class="service-icon"
+            />
+            <h3 class="service-title">العناية بالعملاء</h3>
+            <p>فريق متخصص لخدمتك على مدار الساعة.</p>
+          </div>
+
+          <div class="service-card">
+            <img
+              src="images/icon-management.svg"
+              alt="خدمات بعد البيع"
+              class="service-icon"
+            />
+            <h3 class="service-title">خدمات بعد البيع</h3>
+            <p>نضمن لك تجربة سلسة ومريحة.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الإحصائيات -->
+    <section class="section" style="background-color: #f9f9f9">
+      <div class="container">
+        <h2 class="section-title">أرقام وتد</h2>
+
+        <div class="stats-container">
+          <div class="stat-item">
+            <div class="stat-value">188K</div>
+            <div class="stat-label">عميل سعيد</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-value">4500</div>
+            <div class="stat-label">وحدة مباعة</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-value">1120</div>
+            <div class="stat-label">مشروع مكتمل</div>
+          </div>
+
+          <div class="stat-item">
+            <div class="stat-value">80</div>
+            <div class="stat-label">شريك نجاح</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- حاسبة التمويل العقاري -->
+    <section class="section">
+      <div class="container">
+        <h2 class="section-title">حاسبة التمويل العقاري</h2>
+        <p class="section-subtitle">احسب تمويلك العقاري بسهولة!</p>
+
+        <div class="calculator-container">
+          <form id="mortgage-calculator">
+            <div class="form-group">
+              <label for="property-price" class="form-label"
+                >سعر العقار (ريال)</label
+              >
+              <input
+                type="number"
+                id="property-price"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="down-payment" class="form-label"
+                >الدفعة المقدمة (ريال)</label
+              >
+              <input
+                type="number"
+                id="down-payment"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="loan-term" class="form-label"
+                >مدة القرض (سنوات)</label
+              >
+              <input
+                type="number"
+                id="loan-term"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="interest-rate" class="form-label"
+                >معدل الفائدة السنوي (%)</label
+              >
+              <input
+                type="number"
+                id="interest-rate"
+                class="form-control"
+                step="0.01"
+                required
+              />
+            </div>
+
+            <button type="submit" class="btn btn-primary">احسب</button>
+          </form>
+
+          <div
+            class="calculator-results"
+            style="
+              display: none;
+              margin-top: 2rem;
+              padding: 1rem;
+              background-color: #f9f9f9;
+              border-radius: 5px;
+            "
+          >
+            <h3>نتائج الحساب</h3>
+            <p>القسط الشهري: <strong id="monthly-payment"></strong></p>
+            <p>إجمالي المدفوعات: <strong id="total-payment"></strong></p>
+            <p>إجمالي الفوائد: <strong id="total-interest"></strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الشركاء -->
+    <section class="section" style="background-color: #f9f9f9">
+      <div class="container">
+        <h2 class="section-title">شركاء النجاح</h2>
+
+        <!-- Swiper -->
+        <div class="partners-slider-container">
+          <div class="swiper partners-slider">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img
+                  src="images/18437cd2-1c8f-484d-beb7-675bf3e8d912.png"
+                  alt="شريك 1"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/7741b551-796d-4a4c-a8c5-174539a36619.png"
+                  alt="شريك 2"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/6fe8f39b-e015-4493-866d-f073883d6e52.png"
+                  alt="شريك 3"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/8d556ed0-4292-41d4-8752-0fe86b31d44f.png"
+                  alt="شريك 4"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/0de09264-fb28-428d-93b2-451753c9f96f.png"
+                  alt="شريك 5"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/ae22bead-fa19-4118-ad43-5d1ad219282e.png"
+                  alt="شريك 6"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/cdf2739a-f7e4-4b33-8c20-5b947606b0fb.png"
+                  alt="شريك 7"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/cab06c45-41de-43d7-bbaa-cdf3b3cee32f.png"
+                  alt="شريك 8"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/d3014d6a-083d-4d31-bda5-799c821b8001.png"
+                  alt="شريك 9"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/dd9a17ff-23e4-433c-b305-be825666128c.png"
+                  alt="شريك 10"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/e0a99b4a-d030-4902-b5cf-854bd79de304.png"
+                  alt="شريك 11"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/e764f846-305a-4550-ad09-657c7f8022fe.png"
+                  alt="شريك 12"
+                  class="partner-logo"
+                />
+              </div>
+              <div class="swiper-slide">
+                <img
+                  src="images/ed19863d-e302-4697-af62-6646b687fde4.png"
+                  alt="شريك 13"
+                  class="partner-logo"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- أزرار التنقل -->
+          <!-- <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div> -->
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about-us" class="section" style="background-color: #2f4447;" >
+      <div class="container" >
+         
+        <div class="about-us">
+          <div class="about-us-content">
+            <h2>عن وتد</h2>
+            <p>
+              في وتد الكيان العقارية، نؤمن بأن العقار ليس مجرد مبنى، بل هو
+              استثمار لحياة أفضل. نسعى لتقديم حلول عقارية متكاملة تناسب
+              احتياجاتك، سواء كنت تبحث عن منزل الأحلام أو فرصة استثمارية واعدة.
+              نعمل بخبرة واحترافية لنكون شريكك العقاري الموثوق، ونوفر لك مجموعة
+              متنوعة من العقارات في أفضل المواقع، مع خدمات استشارية ودعم متكامل
+              قبل وأثناء وبعد الشراء.
+            </p>
+            <a
+            href="about.html"
+            class="btn btn-primary"
+            style="margin-top: 1rem"
+              >اعرف المزيد عن وتد</a
+              >
+            </div>
+            <div class="about-us-image">
+              <img
+                src="images/Screenshot 2025-03-04 at 15.27.52.png"
+                alt="عن وتد الكيان العقارية"
+              />
+            </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- نموذج الاتصال المختصر -->
+    <section id="contact" class="section" style="background-color: #f9f9f9">
+      <div class="container">
+        <h2 class="section-title">سجل اهتمامك</h2>
+
+        <div class="contact-form">
+          <form id="contact-form-short">
+            <div class="form-group">
+              <label for="contact-name" class="form-label">الاسم</label>
+              <input
+                type="text"
+                id="contact-name"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-phone" class="form-label">رقم الجوال</label>
+              <input
+                type="tel"
+                id="contact-phone"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="contact-interest" class="form-label">اهتمامك</label>
+              <select id="contact-interest" class="form-control" required>
+                <option value="">اختر اهتمامك</option>
+                <option value="buy">شراء عقار</option>
+                <option value="sell">بيع عقار</option>
+                <option value="rent">استئجار عقار</option>
+                <option value="invest">استثمار عقاري</option>
+              </select>
+            </div>
+
+            <button type="submit" class="btn btn-primary">إرسال</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div>
+            <div class="footer-logo">
+              <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">العقارات</a></li>
+              <li><a href="index.html#about-us">من نحن</a></li>
+              <li><a href="request-property.html">اطلب عقارك</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="register.html">تسجيل</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
+              <p>هاتف: +966...</p>
+                <button class="btn btn-secondary" style="padding: 10px 15px">
+                <!-- زر واتساب -->
+                <a
+                  href="https://wa.me/966500000000"
+                  class="whatsapp-button"
+                  target="_blank"
+                  style=" font-size: 25px;"
+                >
+                <i class="fab fa-whatsapp"></i>
+                  تواصل معنا عبر الواتساب
+                </a>
+              </button>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ وتد العقارية</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Swiper.js JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="unified-script.js"></script>
+  </body>
+</html>
