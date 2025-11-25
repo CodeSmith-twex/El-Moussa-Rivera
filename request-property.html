@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموسى ريفييرا للتطوير العقاري - اطلب عقار</title>
+    <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+    <link rel="stylesheet" href="unified-styles.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      .request-container {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 3rem;
+        align-items: flex-start;
+        margin-top: 3rem;
+      }
+
+      .property-request-form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+
+      .form-full-width {
+        grid-column: span 2;
+      }
+
+      .radio-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        border: 2px solid var(--gray-medium);
+        padding: 1rem;
+        border-radius: 10px;
+        background-color: var(--gray-light);
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .radio-option input {
+        display: none; /* إخفاء الراديو الأصلي */
+      }
+
+      .radio-option span {
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        background-color: #fff;
+        color: var(--primary);
+        border: 2px solid var(--gray-medium);
+        transition: all 0.3s ease;
+        font-weight: 500;
+      }
+
+      .radio-option input:checked + span {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-color: transparent;
+      }
+
+      .features-list {
+        background-color: rgba(58, 90, 92, 0.05);
+        padding: 2rem;
+        border-radius: 15px;
+      }
+
+      .features-list ul {
+        list-style: none;
+        margin-top: 1rem;
+      }
+
+      .features-list li {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      @media (max-width: 992px) {
+        .request-container {
+          grid-template-columns: 1fr;
+        }
+        .property-request-form {
+          grid-template-columns: 1fr;
+        }
+        .form-full-width {
+          grid-column: span 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- الرأس -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img style="height: 60px;" src="images/شعار بدون كتابه.png" alt="الموسى ريفييرا للتطوير العقاري" />
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i><i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="properties.html">العقارات</a></li>
+          <li><a href="index.html#about-us">من نحن</a></li>
+          <li><a href="request-property.html">اطلب عقارك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="register.html">تسجيل</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- قسم نموذج طلب العقار -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">ابحث عن عقارك المثالي معنا</h1>
+        <p class="section-subtitle">
+          نقدم لك مجموعة متميزة من العقارات بمواقع استراتيجية وأسعار تنافسية
+        </p>
+
+        <div class="request-container">
+          <div>
+            <div class="contact-form">
+              <form id="property-request-form" class="property-request-form">
+                <div class="form-group">
+                  <label for="name" class="form-label">الاسم</label>
+                  <input type="text" id="name" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="phone" class="form-label">رقم الجوال</label>
+                  <input type="tel" id="phone" class="form-control" required />
+                </div>
+
+                <div class="form-group">
+                  <label for="city" class="form-label">مدينة العقار</label>
+                  <select id="city" class="form-control" required>
+                    <option value="">اختر المدينة</option>
+                    <option value="جدة">جدة</option>
+                    <option value="مكة">مكة</option>
+                  </select>
+                </div>
+
+                <div class="form-group form-full-width">
+                  <label class="form-label">نوع العقار</label>
+                  <div class="radio-group">
+                    <label class="radio-option">
+                      <input
+                        type="radio"
+                        name="property_type"
+                        value="فيلا"
+                        required
+                      />
+                      <span><i class="fas fa-home"></i> فيلا</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="property_type" value="شقة" />
+                      <span><i class="fas fa-building"></i> شقة</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="property_type" value="روف" />
+                      <span><i class="fas fa-layer-group"></i> روف</span>
+                    </label>
+                    <label class="radio-option">
+                      <input type="radio" name="property_type" value="أرض" />
+                      <span><i class="fas fa-map"></i> أرض</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="form-group form-full-width">
+                  <button type="submit" class="btn btn-primary">
+                    إرسال الطلب
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div>
+            <div class="features-list">
+              <h3>لماذا تختار الموسى ريفييرا العقارية؟</h3>
+              <ul>
+                <li>
+                  <i
+                    class="fas fa-check-circle"
+                    style="color: var(--primary)"
+                  ></i
+                  >نوفر لك عقارات متنوعة بمواقع استراتيجية
+                </li>
+                <li>
+                  <i
+                    class="fas fa-check-circle"
+                    style="color: var(--primary)"
+                  ></i
+                  >نضمن لك تجربة سلسة من البداية حتى توقيع العقود
+                </li>
+                <li>
+                  <i
+                    class="fas fa-check-circle"
+                    style="color: var(--primary)"
+                  ></i
+                  >فريقنا مستعد لمساعدتك في اختيار العقار المناسب لك
+                </li>
+              </ul>
+            </div>
+
+            <div
+              style="
+                margin-top: 2rem;
+                background-color: #f9f9f9;
+                padding: 1.5rem;
+                border-radius: 8px;
+              "
+            >
+              <h3 style="margin-bottom: 1rem">تواصل معنا مباشرة</h3>
+              <p>
+                <i
+                  class="fas fa-phone"
+                  style="margin-left: 0.5rem; color: var(--primary)"
+                ></i>
+                +966...
+              </p>
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div>
+            <div class="footer-logo">
+              <img style="height: 150px;" src="images/شعار الموسي.png" alt="الموسى ريفييرا  للتطوير العقاري" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">العقارات</a></li>
+              <li><a href="index.html#about-us">من نحن</a></li>
+              <li><a href="request-property.html">اطلب عقارك</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="register.html">تسجيل</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
+              <p>هاتف: +966...</p>
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا  العقارية</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="unified-script.js"></script>
+  </body>
+</html>

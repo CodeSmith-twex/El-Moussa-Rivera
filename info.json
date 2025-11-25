@@ -1,0 +1,175 @@
+{
+    "theme": {
+      "colors": {
+        "primary": "#3A5A5C",
+        "secondary": "#BFA57B",
+        "background": "#FDFDFD",
+        "text_dark": "#2D3748",
+        "text_light": "#FFFFFF",
+        "footer_background": "#294547"
+      },
+      "typography": {
+        "font_family": "Almarai, sans-serif",
+        "headings": {
+          "font_size_h1": "48px",
+          "font_size_h2": "36px",
+          "font_weight": "700"
+        },
+        "body": {
+          "font_size": "16px",
+          "line_height": "1.6"
+        }
+      }
+    },
+    "pages": {
+      "home": {
+        "name": "الصفحة الرئيسية",
+        "sections": [
+          {
+            "type": "header",
+            "logo": "logo.png",
+            "navigation": [
+              {"text": "الرئيسية", "link": "/"},
+              {"text": "العقارات", "link": "/properties"},
+              {"text": "من نحن", "link": "/about"},
+              {"text": "اطلب عقارك", "link": "/request"},
+              {"text": "خدماتنا", "link": "/services"},
+              {"text": "تسجيل", "link": "/register"},
+              {"text": "تواصل معنا", "link": "/contact"}
+            ]
+          },
+          {
+            "type": "hero",
+            "background_image": "hero-background.jpg",
+            "title": "عقارات، تمويل، استشارات... كل ما تحتاجه في مكان واحد!",
+            "subtitle": "خطوتك الأولى نحو عقارك المثالي تبدأ هنا!",
+            "cta_button": {
+              "text": "مشاريع وتد الكيان",
+              "link": "/projects"
+            }
+          },
+          {
+            "type": "services",
+            "title": "خدمات وتد",
+            "subtitle": "حلول عقارية متكاملة تلبي احتياجاتك",
+            "items": [
+              {"icon": "icon-legal.svg", "title": "الاستشارات العقارية", "description": "نقدم لك أفضل الحلول والنصائح."},
+              {"icon": "icon-marketing.svg", "title": "التسويق العقاري", "description": "خطط تسويقية مبتكرة لبيع عقارك."},
+              {"icon": "icon-care.svg", "title": "العناية بالعملاء", "description": "فريق متخصص لخدمتك على مدار الساعة."},
+              {"icon": "icon-management.svg", "title": "خدمات بعد البيع", "description": "نضمن لك تجربة سلسة ومريحة."}
+            ]
+          },
+          {
+            "type": "stats",
+            "title": "أرقام وتد",
+            "items": [
+              {"value": "188K", "label": "عميل سعيد"},
+              {"value": "4500", "label": "وحدة مباعة"},
+              {"value": "1120", "label": "مشروع مكتمل"},
+              {"value": "80", "label": "شريك نجاح"}
+            ]
+          },
+          {
+            "type": "mortgage_calculator",
+            "title": "حاسبة التمويل العقاري",
+            "description": "احسب تمويلك العقاري بسهولة!"
+          },
+          {
+            "type": "partners",
+            "title": "شركاء النجاح",
+            "logos": ["partner1.png", "partner2.png", "partner3.png", "partner4.png"]
+          },
+          {
+            "type": "about_us_snippet",
+            "title": "عن وتد",
+            "description": "شركة وتد الكيان العقارية هي شركة رائدة في مجال التطوير والاستثمار العقاري...",
+            "image": "about-us-image.jpg"
+          },
+          {
+            "type": "contact_form_short",
+            "title": "سجل اهتمامك"
+          },
+          {
+            "type": "footer",
+            "logo": "logo-footer.png",
+            "slogan": "حيث يلتقي الطموح بالواقع!",
+            "quick_links": [
+              {"text": "الرئيسية", "link": "/"},
+              {"text": "العقارات", "link": "/properties"},
+              {"text": "من نحن", "link": "/about"},
+              {"text": "اطلب عقارك", "link": "/request"},
+              {"text": "خدماتنا", "link": "/services"},
+              {"text": "تسجيل", "link": "/register"}
+            ],
+            "contact_info": {
+              "address": "Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia",
+              "phone": "+966...",
+              "whatsapp": "https://wa.me/..."
+            },
+            "social_media": [
+              {"platform": "tiktok", "link": "#"},
+              {"platform": "instagram", "link": "#"},
+              {"platform": "twitter", "link": "#"},
+              {"platform": "snapchat", "link": "#"}
+            ],
+            "copyright": "© 2025 جميع الحقوق محفوظة لـ وتد الكيان العقارية"
+          }
+        ]
+      },
+      "request_property": {
+        "name": "اطلب عقار",
+        "sections": [
+          {
+            "type": "form",
+            "title": "ابحث عن عقارك المثالي معنا",
+            "subtitle": "نقدم لك مجموعة متميزة من العقارات بمواقع استراتيجية وأسعار تنافسية",
+            "fields": [
+              {"name": "name", "label": "الاسم", "type": "text"},
+              {"name": "phone", "label": "رقم الجوال", "type": "tel"},
+              {"name": "city", "label": "مدينة العقار", "type": "select", "options": ["جدة", "مكة"]},
+              {"name": "property_type", "label": "نوع العقار", "type": "radio", "options": ["فيلا", "شقة", "روف", "أرض"]}
+            ],
+            "submit_button": {"text": "إرسال الطلب"},
+            "features_list": {
+              "title": "لماذا تختار وتد الكيان العقارية؟",
+              "items": [
+                "نوفر لك عقارات متنوعة بمواقع استراتيجية",
+                "نضمن لك تجربة سلسة من البداية حتى توقيع العقود",
+                "فريقنا مستعد لمساعدتك في اختيار العقار المناسب لك"
+              ]
+            }
+          }
+        ]
+      },
+      "register": {
+        "name": "إنشاء حساب جديد",
+        "sections": [
+          {
+            "type": "form",
+            "title": "إنشاء حساب جديد",
+            "fields": [
+              {"name": "full_name", "label": "الاسم الكامل", "type": "text"},
+              {"name": "email", "label": "البريد الإلكتروني", "type": "email"},
+              {"name": "password", "label": "كلمة المرور", "type": "password"}
+            ],
+            "submit_button": {"text": "إنشاء حساب"},
+            "login_link": {"text": "لديك حساب بالفعل؟ تسجيل الدخول", "link": "/login"}
+          }
+        ]
+      },
+       "properties_listing": {
+        "name": "جميع المشاريع",
+        "sections": [
+          {
+            "type": "empty_state",
+            "message": "لا توجد نتائج تطابق معايير البحث",
+            "suggestion": "يرجى تعديل الفلترات والمحاولة مرة أخرى",
+            "button": {
+              "text": "مسح الفلتر",
+              "action": "clear_filters"
+            }
+          }
+        ]
+      }
+    }
+  }

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموسى ريفييرا للتطوير العقاري - العقارات المتاحة</title>
+    <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+    <link rel="stylesheet" href="unified-styles.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* أنماط خاصة بصفحة العقارات */
+      .filters-container {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: var(--shadow-light);
+      }
+
+      .filters-form {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+      }
+
+      .property-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .property-card {
+        background-color: #fff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: var(--shadow-light);
+        transition: var(--transition-fast);
+        border: 2px solid transparent;
+      }
+
+      .property-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--secondary);
+      }
+
+      .property-image {
+        height: 200px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .property-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .property-badges {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        align-items: flex-end;
+      }
+
+      .badge {
+        background-color: rgba(58, 90, 92, 0.9);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        font-weight: 500;
+      }
+
+      .badge.status-sale {
+        background-color: var(--primary);
+      }
+
+      .badge.status-rent {
+        background-color: #2980b9;
+      }
+
+      .badge.status-construction {
+        background-color: var(--secondary);
+        color: var(--text-dark);
+      }
+
+      .property-content {
+        padding: 1.5rem;
+      }
+
+      .property-title {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+        color: var(--primary);
+      }
+
+      .property-location {
+        color: var(--gray-dark);
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .property-location i {
+        margin-left: 0.5rem;
+      }
+
+      .property-features {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid #eee;
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--gray-dark);
+        font-size: 0.9rem;
+      }
+
+      .feature-value {
+        font-weight: bold;
+        color: var(--primary);
+      }
+
+      .property-price {
+        font-size: 1.3rem;
+        font-weight: bold;
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .property-actions {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 3rem;
+      }
+
+      .pagination-item {
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #ddd;
+        margin: 0 0.3rem;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .pagination-item:hover,
+      .pagination-item.active {
+        background-color: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+    </style>
+    <style>
+      /* أنماط أزرار فلترة الحالة */
+      .status-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-bottom: 2.5rem;
+      }
+      .status-tab {
+        background-color: #fff;
+        color: var(--primary);
+        border: 2px solid var(--gray-medium);
+        padding: 0.75rem 2rem;
+        border-radius: 50px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+      .status-tab.active,
+      .status-tab:hover {
+        background: linear-gradient(135deg, var(--primary), var(--secondary));
+        color: white;
+        border-color: transparent;
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-light);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- الرأس -->
+    <header >
+      <div class="container header-container" >
+        <div class="logo">
+          <img style="height: 60px;" src="images/شعار بدون كتابه.png" alt="الموسى ريفييرا للتطوير العقاري" />
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i><i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu" >
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="properties.html">العقارات</a></li>
+          <li><a href="index.html#about-us">من نحن</a></li>
+
+          <li><a href="request-property.html">اطلب عقارك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+
+          <li><a href="register.html">تسجيل</a></li>
+
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- قسم العقارات -->
+    <section class="section" style="background-color: var(--gray-light)">
+      <div class="container">
+        <h1 class="section-title">العقارات المتاحة</h1>
+        <p class="section-subtitle">اكتشف أفضل العقارات المتاحة لدينا</p>
+
+        <!-- فلاتر البحث -->
+        <div class="filters-container">
+          <form class="filters-form">
+            <div class="form-group">
+              <label for="city-filter" class="form-label">المدينة</label>
+              <select id="city-filter" class="form-control">
+                <option value="">جميع المدن</option>
+                <option value="جدة">جدة</option>
+                <option value="مكة">مكة</option>
+                <option value="الرياض">الرياض</option>
+                <option value="الدمام">الدمام</option>
+                <option value="الخبر">الخبر</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="type-filter" class="form-label">نوع العقار</label>
+              <select id="type-filter" class="form-control">
+                <option value="">جميع الأنواع</option>
+                <option value="فيلا">فيلا</option>
+                <option value="شقة">شقة</option>
+                <option value="روف">روف</option>
+                <option value="أرض">أرض</option>
+                <option value="مكتب">مكتب</option>
+                <option value="محل تجاري">محل تجاري</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="price-filter" class="form-label">السعر</label>
+              <select id="price-filter" class="form-control">
+                <option value="">جميع الأسعار</option>
+                <option value="1">أقل من 500,000 ريال</option>
+                <option value="2">500,000 - 1,000,000 ريال</option>
+                <option value="3">1,000,000 - 2,000,000 ريال</option>
+                <option value="4">أكثر من 2,000,000 ريال</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="rooms-filter" class="form-label">عدد الغرف</label>
+              <select id="rooms-filter" class="form-control">
+                <option value="">الكل</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5+</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="status-filter" class="form-label">الحالة</label>
+              <select id="status-filter" class="form-control">
+                <option value="">الكل</option>
+                <option value="للبيع">للبيع</option>
+                <option value="للإيجار">للإيجار</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">&nbsp;</label>
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                بحث
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- أزرار فلترة الحالة -->
+        <div class="status-tabs">
+          <button class="status-tab active" data-status="all">
+            كل المشاريع
+          </button>
+          <button class="status-tab" data-status="completed">تم الإنشاء</button>
+          <button class="status-tab" data-status="construction">
+            تحت الإنشاء
+          </button>
+        </div>
+
+        <!-- قائمة العقارات -->
+        <div class="property-grid">
+          <!-- عقار 1 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="images/1cc22874-ae6d-418e-b7aa-1da777bbec2c.png"
+                alt="فيلا فاخرة في الرياض"
+              />
+              <div class="property-badges">
+                <span class="badge status-sale">للبيع</span>
+                <span class="badge">فيلا</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">فيلا فاخرة في حي النرجس</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                الرياض، حي النرجس
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">5</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">4</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">450</span> م²
+                </div>
+              </div>
+              <div class="property-price">2,500,000 ريال</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- عقار 2 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png"
+                alt="شقة فاخرة في جدة"
+              />
+              <div class="property-badges">
+                <span class="badge status-sale">للبيع</span>
+                <span class="badge">شقة</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">شقة فاخرة بإطلالة بحرية</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                جدة، حي الشاطئ
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">3</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">2</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">180</span> م²
+                </div>
+              </div>
+              <div class="property-price">1,200,000 ريال</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- عقار 3 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img src="images/asdpng.png" alt="مكتب تجاري في الدمام" />
+              <div class="property-badges">
+                <span class="badge status-rent">للإيجار</span>
+                <span class="badge">مكتب</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">مكتب تجاري في برج الأعمال</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                الدمام، حي الأعمال
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">4</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">2</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">220</span> م²
+                </div>
+              </div>
+              <div class="property-price">120,000 ريال / سنوياً</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- عقار 4 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="images/d468cdef-669c-4c3a-af46-7d079c45666f.png"
+                alt="شقة سكنية في الخبر"
+              />
+              <div class="property-badges">
+                <span class="badge status-sale">للبيع</span>
+                <span class="badge">شقة</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">شقة سكنية في مجمع الواحة</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                الخبر، حي الراكة
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">3</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">2</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">160</span> م²
+                </div>
+              </div>
+              <div class="property-price">950,000 ريال</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- عقار 5 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="images/ddab0cd1-e375-4092-8132-8ed3a49f1748.png"
+                alt="فيلا في مكة"
+              />
+              <div class="property-badges">
+                <span class="badge status-sale">للبيع</span>
+                <span class="badge">فيلا</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">فيلا راقية في حي العزيزية</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                مكة، حي العزيزية
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">6</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">5</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">520</span> م²
+                </div>
+              </div>
+              <div class="property-price">3,200,000 ريال</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- عقار 6 -->
+          <div class="property-card">
+            <div class="property-image">
+              <img
+                src="images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png"
+                alt="مشروع شقق تحت الإنشاء"
+              />
+              <div class="property-badges">
+                <span class="badge status-construction">تحت الإنشاء</span>
+                <span class="badge">شقق</span>
+              </div>
+            </div>
+            <div class="property-content">
+              <h3 class="property-title">مشروع أبراج وتد السكني</h3>
+              <div class="property-location">
+                <i class="fas fa-map-marker-alt"></i>
+                الرياض، حي الملقا
+              </div>
+              <div class="property-features">
+                <div class="feature">
+                  <i class="fas fa-bed"></i>
+                  <span class="feature-value">2-4</span> غرف
+                </div>
+                <div class="feature">
+                  <i class="fas fa-bath"></i>
+                  <span class="feature-value">2-3</span> حمامات
+                </div>
+                <div class="feature">
+                  <i class="fas fa-ruler-combined"></i>
+                  <span class="feature-value">120-250</span> م²
+                </div>
+              </div>
+              <div class="property-price">يبدأ من 850,000 ريال</div>
+              <div class="property-actions">
+                <a
+                  href="property-details.html"
+                  class="btn btn-secondary"
+                  style="flex: 1"
+                  >تفاصيل</a
+                >
+                <a href="contact.html" class="btn btn-primary" style="flex: 1"
+                  >تواصل</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div>
+            <div class="footer-logo">
+              <img style="height: 150px;" src="images/شعار الموسي.png" alt="الموسى ريفييرا للتطوير العقاري" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+          <div id="footer-placeholder"></div>
+
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">العقارات</a></li>
+              <li><a href="index.html#about-us">من نحن</a></li>
+              <li><a href="request-property.html">اطلب عقارك</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="register.html">تسجيل</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
+              <p>هاتف: +966...</p>
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+                style="font-size: 15px;"
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا العقارية</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="unified-script.js"></script>
+  </body>
+</html>

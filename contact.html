@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>الموسى ريفييرا  للتطوير العقاري - تواصل معنا</title>
+    <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+    <link rel="stylesheet" href="unified-styles.css" />
+    <!-- Font Awesome للأيقونات -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* أنماط خاصة بصفحة الاتصال */
+      .contact-container {
+        background-color: #fff;
+        border-radius: 20px;
+        box-shadow: var(--shadow-medium);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1.2fr 1.8fr;
+        margin-top: 3rem;
+      }
+
+      .contact-info-box {
+        background: linear-gradient(160deg, var(--primary) 0%, #2c4446 100%);
+        padding: 3rem;
+        color: white;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+      }
+
+      .contact-item i {
+        font-size: 1.5rem;
+        margin-left: 1rem;
+        color: var(--secondary);
+        width: 30px;
+        text-align: center;
+      }
+
+      .contact-item h3 {
+        margin: 0 0 0.5rem;
+        font-size: 1.2rem;
+        color: white;
+      }
+
+      .contact-item p {
+        margin: 0;
+        font-size: 1rem;
+        color: rgba(255, 255, 255, 0.8);
+      }
+
+      .contact-form-wrapper {
+        padding: 3rem;
+      }
+
+      .input-with-icon {
+        position: relative;
+      }
+
+      .input-with-icon .form-control {
+        padding-right: 45px; /* مساحة للأيقونة في اليمين */
+      }
+
+      .input-with-icon i {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: var(--gray-dark);
+        transition: color 0.3s ease;
+      }
+
+      .input-with-icon .form-control:focus ~ i {
+        color: var(--primary);
+      }
+
+      .social-links-section {
+        text-align: center;
+        background-color: var(--gray-light);
+      }
+
+      .map-container {
+        height: 400px;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: var(--shadow-medium);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      .hours-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+      }
+
+      .hours-card {
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        min-width: 280px;
+      }
+
+      .hours-card .footer-title {
+        color: var(--primary);
+        margin-bottom: 1rem;
+      }
+
+      .hours-card p {
+        margin: 0.5rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .contact-container {
+          grid-template-columns: 1fr; /* تغيير التخطيط للشاشات الصغيرة */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- الرأس -->
+    <header>
+      <div class="container header-container">
+        <div class="logo">
+          <img style="height: 60px;" src="images/شعار بدون كتابه.png" alt="الموسى ريفييرا  للتطوير العقاري" />
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i><i class="fas fa-times"></i>
+        </button>
+        <ul class="nav-menu">
+          <li><a href="index.html">الرئيسية</a></li>
+          <li><a href="properties.html">العقارات</a></li>
+          <li><a href="index.html#about-us">من نحن</a></li>
+          <li><a href="request-property.html">اطلب عقارك</a></li>
+          <li><a href="index.html#services">خدماتنا</a></li>
+          <li><a href="register.html">تسجيل</a></li>
+          <li><a href="contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- قسم الاتصال الرئيسي -->
+    <section class="section">
+      <div class="container">
+        <h1 class="section-title">تواصل معنا</h1>
+        <p class="section-subtitle">
+          نحن هنا للإجابة على استفساراتك ومساعدتك في كل ما تحتاجه
+        </p>
+
+        <div class="contact-container">
+          <div class="contact-info-box">
+            <div class="contact-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h3>الهاتف</h3>
+                <p>966512345678+</p>
+                <p>966598765432+</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h3>البريد الإلكتروني</h3>
+                <p>info@watad-realestate.com</p>
+                <p>sales@watad-realestate.com</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h3>العنوان</h3>
+                <p>الرياض، المملكة العربية السعودية</p>
+                <p>طريق الملك فهد، برج الكيان، الطابق 15</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h3>ساعات العمل</h3>
+                <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+                <p>السبت: 10:00 ص - 2:00 م</p>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <i class=""></i>
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-form-wrapper">
+            <form class="modern-form">
+              <div class="form-group">
+                <label for="name" class="form-label">الاسم الكامل</label>
+                <div class="input-with-icon">
+                  <input
+                    type="text"
+                    id="name"
+                    class="form-control"
+                    placeholder="أدخل اسمك الكامل"
+                    required
+                  />
+                  <i class="fas fa-user"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <div class="input-with-icon">
+                  <input
+                    type="email"
+                    id="email"
+                    class="form-control"
+                    placeholder="example@example.com"
+                    required
+                  />
+                  <i class="fas fa-envelope"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone" class="form-label">رقم الهاتف</label>
+                <div class="input-with-icon">
+                  <input
+                    type="tel"
+                    id="phone"
+                    class="form-control"
+                    placeholder="05xxxxxxxx"
+                    required
+                  />
+                  <i class="fas fa-phone"></i>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="subject" class="form-label">الموضوع</label>
+                <input
+                  type="text"
+                  id="subject"
+                  class="form-control"
+                  placeholder="مثال: استفسار عن عقار"
+                  required
+                />
+              </div>
+
+              <div class="form-group">
+                <label for="message" class="form-label">الرسالة</label>
+                <textarea
+                  id="message"
+                  class="form-control"
+                  rows="5"
+                  placeholder="اكتب رسالتك هنا..."
+                  required
+                ></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-primary" style="width: 100%">
+                إرسال الرسالة
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم الخريطة -->
+    <section class="section" style="padding-top: 0">
+      <div class="container">
+        <h2 class="section-title">موقعنا</h2>
+        <p class="section-subtitle">يمكنك زيارتنا في مقر الشركة</p>
+
+        <div class="map-container">
+          <!-- يمكن استبدال هذا برابط خريطة جوجل الفعلي للموقع -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.6763966896867!2d46.67193491499914!3d24.713454184128068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f03890d489399%3A0xba974d1c98e79fd5!2sKing%20Fahd%20Rd%2C%20Riyadh%20Saudi%20Arabia!5e0!3m2!1sen!2s!4v1625145892878!5m2!1sen!2s"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- قسم ساعات العمل -->
+    <section class="section social-links-section">
+      <div class="container">
+        <h2 class="section-title">ساعات العمل</h2>
+        <p class="section-subtitle">يسعدنا خدمتكم خلال أوقات الدوام الرسمي</p>
+
+        <div class="stats-container">
+          <div class="hours-card">
+            <h3 class="footer-title">المقر الرئيسي - الرياض</h3>
+            <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+            <p>السبت: 10:00 ص - 2:00 م</p>
+            <p>الجمعة: مغلق</p>
+          </div>
+
+          <div class="hours-card">
+            <h3 class="footer-title">فرع جدة</h3>
+            <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+            <p>السبت: 10:00 ص - 2:00 م</p>
+            <p>الجمعة: مغلق</p>
+          </div>
+
+          <div class="hours-card">
+            <h3 class="footer-title">فرع الدمام</h3>
+            <p>الأحد - الخميس: 9:00 ص - 5:00 م</p>
+            <p>السبت: 10:00 ص - 2:00 م</p>
+            <p>الجمعة: مغلق</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- التذييل -->
+    <footer>
+      <div class="container">
+        <div class="footer-container">
+          <div>
+            <div class="footer-logo">
+              <img style="height: 150px;" src="images/شعار الموسي.png" alt="الموسى ريفييرا للتطوير العقاري" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a href="index.html">الرئيسية</a></li>
+              <li><a href="projects.html">العقارات</a></li>
+              <li><a href="index.html#about-us">من نحن</a></li>
+              <li><a href="request-property.html">اطلب عقارك</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="register.html">تسجيل</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
+              <p>هاتف: +966...</p>
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+
+            <div class="social-media">
+              <a href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا العقارية</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="unified-script.js"></script>
+  </body>
+</html>
