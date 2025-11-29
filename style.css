@@ -626,6 +626,7 @@ footer {
 @media (max-width: 768px) {
   .mobile-menu-toggle {
     display: block;
+    
   }
   
   .nav-menu {

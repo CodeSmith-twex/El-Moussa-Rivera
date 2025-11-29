@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>وتد للتطوير العقاري - الصفحة الرئيسية</title>
-    <link rel="shortcut icon" href="images/شعار وتد.png" type="image/x-icon" />
+    <title>الموسى ريفييرا للتطوير العقاري - الصفحة الرئيسية</title>
+    <link
+      rel="shortcut icon"
+      href="images/شعار بدون كتابه.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="unified-styles.css" />
     <!-- Font Awesome للأيقونات -->
     <link
@@ -22,7 +26,11 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+          <img
+            style="height: 60px"
+            src="images/شعار بدون كتابه.png"
+            alt="الموسى ريفييرا"
+          />
         </div>
         <button class="mobile-menu-toggle">
           <i class="fas fa-bars"></i>
@@ -51,7 +59,7 @@
           عقارات، تمويل، استشارات... كل ما تحتاجه في مكان واحد!
         </h1>
         <p class="hero-subtitle">خطوتك الأولى نحو عقارك المثالي تبدأ هنا!</p>
-        <a href="properties.html" class="btn btn-secondary">مشاريع وتد</a>
+        <a href="properties.html" class="btn btn-secondary">مشاريعنا</a>
       </div>
       <div class="hero-extra-text"></div>
     </section>
@@ -59,7 +67,7 @@
     <!-- قسم الخدمات -->
     <section id="services" class="section">
       <div class="container">
-        <h2 class="section-title">خدمات وتد</h2>
+        <h2 class="section-title">خدماتنا</h2>
         <p class="section-subtitle">حلول عقارية متكاملة تلبي احتياجاتك</p>
 
         <div class="services-grid">
@@ -73,15 +81,7 @@
             <p>نقدم لك أفضل الحلول والنصائح.</p>
           </div>
 
-          <div class="service-card">
-            <img
-              src="images/icon-marketing.svg"
-              alt="التسويق العقاري"
-              class="service-icon"
-            />
-            <h3 class="service-title">التسويق العقاري</h3>
-            <p>خطط تسويقية مبتكرة لبيع عقارك.</p>
-          </div>
+         
 
           <div class="service-card">
             <img
@@ -109,7 +109,7 @@
     <!-- قسم الإحصائيات -->
     <section class="section" style="background-color: #f9f9f9">
       <div class="container">
-        <h2 class="section-title">أرقام وتد</h2>
+        <h2 class="section-title">أرقامنا</h2>
 
         <div class="stats-container">
           <div class="stat-item">
@@ -123,96 +123,19 @@
           </div>
 
           <div class="stat-item">
-            <div class="stat-value">1120</div>
+            <div class="stat-value">58</div>
             <div class="stat-label">مشروع مكتمل</div>
           </div>
 
           <div class="stat-item">
-            <div class="stat-value">80</div>
+            <div class="stat-value">50</div>
             <div class="stat-label">شريك نجاح</div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- حاسبة التمويل العقاري -->
-    <section class="section">
-      <div class="container">
-        <h2 class="section-title">حاسبة التمويل العقاري</h2>
-        <p class="section-subtitle">احسب تمويلك العقاري بسهولة!</p>
-
-        <div class="calculator-container">
-          <form id="mortgage-calculator">
-            <div class="form-group">
-              <label for="property-price" class="form-label"
-                >سعر العقار (ريال)</label
-              >
-              <input
-                type="number"
-                id="property-price"
-                class="form-control"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="down-payment" class="form-label"
-                >الدفعة المقدمة (ريال)</label
-              >
-              <input
-                type="number"
-                id="down-payment"
-                class="form-control"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="loan-term" class="form-label"
-                >مدة القرض (سنوات)</label
-              >
-              <input
-                type="number"
-                id="loan-term"
-                class="form-control"
-                required
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="interest-rate" class="form-label"
-                >معدل الفائدة السنوي (%)</label
-              >
-              <input
-                type="number"
-                id="interest-rate"
-                class="form-control"
-                step="0.01"
-                required
-              />
-            </div>
-
-            <button type="submit" class="btn btn-primary">احسب</button>
-          </form>
-
-          <div
-            class="calculator-results"
-            style="
-              display: none;
-              margin-top: 2rem;
-              padding: 1rem;
-              background-color: #f9f9f9;
-              border-radius: 5px;
-            "
-          >
-            <h3>نتائج الحساب</h3>
-            <p>القسط الشهري: <strong id="monthly-payment"></strong></p>
-            <p>إجمالي المدفوعات: <strong id="total-payment"></strong></p>
-            <p>إجمالي الفوائد: <strong id="total-interest"></strong></p>
-          </div>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- قسم الشركاء -->
     <section class="section" style="background-color: #f9f9f9">
@@ -324,14 +247,13 @@
     </section>
 
     <!-- قسم من نحن -->
-    <section id="about-us" class="section" style="background-color: #2f4447;" >
-      <div class="container" >
-         
+    <section id="about-us" class="section" style="background-color: #2f4447">
+      <div class="container">
         <div class="about-us">
           <div class="about-us-content">
-            <h2>عن وتد</h2>
+            <h2>من نحن</h2>
             <p>
-              في وتد الكيان العقارية، نؤمن بأن العقار ليس مجرد مبنى، بل هو
+              في الموسي ريفييرا العقارية، نؤمن بأن العقار ليس مجرد مبنى، بل هو
               استثمار لحياة أفضل. نسعى لتقديم حلول عقارية متكاملة تناسب
               احتياجاتك، سواء كنت تبحث عن منزل الأحلام أو فرصة استثمارية واعدة.
               نعمل بخبرة واحترافية لنكون شريكك العقاري الموثوق، ونوفر لك مجموعة
@@ -339,18 +261,18 @@
               قبل وأثناء وبعد الشراء.
             </p>
             <a
-            href="about.html"
-            class="btn btn-primary"
-            style="margin-top: 1rem"
-              >اعرف المزيد عن وتد</a
-              >
-            </div>
-            <div class="about-us-image">
-              <img
-                src="images/Screenshot 2025-03-04 at 15.27.52.png"
-                alt="عن وتد الكيان العقارية"
-              />
-            </div>
+              href="about.html"
+              class="btn btn-primary"
+              style="margin-top: 1rem"
+              >اعرف المزيد عنا</a
+            >
+          </div>
+          <div class="about-us-image">
+            <img
+              src="images/Screenshot 2025-03-04 at 15.27.52.png"
+              alt="عن الموسي ريفييرا العقارية"
+            />
+          </div>
         </div>
       </div>
     </section>
@@ -405,7 +327,11 @@
         <div class="footer-container">
           <div>
             <div class="footer-logo">
-              <img src="images/شعار وتد.png" alt="وتد للتطوير العقاري" />
+              <img
+                style="height: 150px"
+                src="images/شعار الموسي.png"
+                alt="الموسى ريفييرا"
+              />
             </div>
             <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
           </div>
@@ -427,18 +353,14 @@
             <div class="contact-info">
               <p>Batha Quraish, 4226 حي, 6588, Makkah 24352, Saudi Arabia</p>
               <p>هاتف: +966...</p>
-                <button class="btn btn-secondary" style="padding: 10px 15px">
-                <!-- زر واتساب -->
-                <a
-                  href="https://wa.me/966500000000"
-                  class="whatsapp-button"
-                  target="_blank"
-                  style=" font-size: 25px;"
-                >
+              <a
+                href="https://wa.me/966500000000"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+              >
                 <i class="fab fa-whatsapp"></i>
-                  تواصل معنا عبر الواتساب
-                </a>
-              </button>
+                تواصل معنا عبر الواتساب
+              </a>
             </div>
 
             <div class="social-media">
@@ -455,7 +377,7 @@
         </div>
 
         <div class="copyright">
-          <p>© 2025 جميع الحقوق محفوظة لـ وتد العقارية</p>
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا العقارية</p>
         </div>
       </div>
     </footer>

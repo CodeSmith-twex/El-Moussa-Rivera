@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>تفاصيل العقار</title>
+   
+  <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+
+  <link rel="stylesheet" href="unified-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <style>
+    .details-container {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: var(--shadow-light);
+      margin-top: 2rem;
+    }
+    .details-image img {
+      width: 100%;
+      border-radius: 10px;
+      height: auto;
+      object-fit: cover;
+    }
+    .details-title {
+      font-size: 2rem;
+      margin: 1rem 0;
+      color: var(--primary);
+      font-weight: bold;
+    }
+    .details-info {
+      margin: 1.5rem 0;
+      font-size: 1.1rem;
+      color: var(--gray-dark);
+      
+    }
+    .details-info div {
+      margin-bottom: 10px;
+    }
+    .details-price {
+      font-size: 1.8rem;
+      color: var(--primary);
+      font-weight: bold;
+      margin: 1.5rem 0;
+    }
+    .btn-contact {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: var(--primary);
+      color: #fff;
+      border-radius: 10px;
+      text-align: center;
+      font-size: 1.2rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-container">
+    <div class="logo"><img style="height:60px;" src="images/شعار بدون كتابه.png" /></div>
+   
+  </div>
+</header>
+
+<section class="section" style="background: var(--gray-light);">
+  <div class="container">
+
+    <div class="details-container">
+
+      <div class="details-image">
+        <img id="prop-image" src="">
+      </div>
+
+      <h1 id="prop-title" class="details-title"></h1>
+
+      <div class="details-info">
+        <div><i class="fas fa-map-marker-alt"></i> <span id="prop-location"></span></div>
+        <div><i class="fas fa-bed"></i> <span id="prop-rooms"></span> غرف</div>
+        <div><i class="fas fa-bath"></i> <span id="prop-baths"></span> حمامات</div>
+        <div><i class="fas fa-ruler-combined"></i> المساحة: <span id="prop-area"></span> م²</div>
+        <div><i class="fas fa-tag"></i> النوع: <span id="prop-type"></span></div>
+        <div><i class="fas fa-info-circle"></i> الحالة: <span id="prop-status"></span></div>
+      </div>
+
+      <div id="prop-price" class="details-price"></div>
+      <a href="properties.html" class="btn-contact">العودة الي الخلف</a>
+      <a href="contact.html" class="btn-contact">تواصل معنا بخصوص هذا العقار</a>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  // ======================
+  // بيانات العقارات
+  // ======================
+
+  const properties = {
+    1: {
+      title: "فيلا فاخرة في حي النرجس",
+      image: "images/1cc22874-ae6d-418e-b7aa-1da777bbec2c.png",
+      location: "الرياض، حي النرجس",
+      rooms: "5",
+      baths: "4",
+      area: "450",
+      type: "فيلا",
+      status: "للبيع",
+      price: "2,500,000 ريال"
+    },
+    2: {
+      title: "شقة فاخرة بإطلالة جزابة",
+      image: "images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png",
+      location: "الرياض, حي السويدي",
+      rooms: "3",
+      baths: "2",
+      area: "180",
+      type: "شقة",
+      status: "للبيع",
+      price: "1,200,000 ريال"
+    },
+    3: {
+      title: "مكتب تجاري في الياسمين ",
+      image: "images/asdpng.png",
+      location: "الرياض, حي الياسمين",
+      rooms: "4",
+      baths: "2",
+      area: "220",
+      type: "مكتب",
+      status: "للإيجار",
+      price: "120,000 ريال / سنوياً"
+    },
+    4: {
+      title: "شقة سكنية في  العليا",
+      image: "images/d468cdef-669c-4c3a-af46-7d079c45666f.png",
+      location: "الرياض, حي العليا",
+      rooms: "3",
+      baths: "2",
+      area: "160",
+      type: "شقة",
+      status: "للبيع",
+      price: "950,000 ريال"
+    },
+    5: {
+      title: "فيلا راقية في حي العزيزية",
+      image: "images/ddab0cd1-e375-4092-8132-8ed3a49f1748.png",
+      location: "الرياض, حي العزيزية",
+      rooms: "6",
+      baths: "5",
+      area: "520",
+      type: "فيلا",
+      status: "للبيع",
+      price: "3,200,000 ريال"
+    },
+    6: {
+      title: "فيلا راقية في حي الملقا",
+      image: "images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png",
+      location: "الرياض، حي الملقا",
+      rooms: "2-4",
+      baths: "2-3",
+      area: "120-250",
+      type: "شقق",
+      status: "تحت الإنشاء",
+      price: "يبدأ من 850,000 ريال"
+    }
+  };
+
+  // ======================
+  // قراءة ID من الرابط
+  // ======================
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+
+  // إذا مافي ID رجع للصفحة السابقة
+  if (!id || !properties[id]) {
+    window.location.href = "properties.html";
+  }
+
+  // تحميل البيانات للصفحة
+  const prop = properties[id];
+
+  document.getElementById("prop-title").textContent = prop.title;
+  document.getElementById("prop-image").src = prop.image;
+  document.getElementById("prop-location").textContent = prop.location;
+  document.getElementById("prop-rooms").textContent = prop.rooms;
+  document.getElementById("prop-baths").textContent = prop.baths;
+  document.getElementById("prop-area").textContent = prop.area;
+  document.getElementById("prop-type").textContent = prop.type;
+  document.getElementById("prop-status").textContent = prop.status;
+  document.getElementById("prop-price").textContent = prop.price;
+
+</script>
+
+</body>
+</html>

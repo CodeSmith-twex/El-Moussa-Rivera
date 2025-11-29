@@ -227,6 +227,7 @@ body.home header.scrolled {
 .mobile-menu-toggle.is-active .fa-bars {
   transform: rotate(-180deg);
   opacity: 0;
+
 }
 .mobile-menu-toggle.is-active .fa-times {
   transform: rotate(0);
@@ -624,6 +625,7 @@ footer {
 
 .social-media {
   display: flex;
+ 
   gap: 1rem;
   margin-top: 1rem;
 }
@@ -653,8 +655,9 @@ footer {
 }
 
 /* التصميم المتجاوب */
-@media (max-width: 768px) {
+@media (max-width: 853px) {
   .mobile-menu-toggle {
+    margin-left: 10px;
     display: block;
   }
   
@@ -677,7 +680,9 @@ footer {
     display: flex;
     transform: translateY(0);
   }
-
+  .social-media {
+    justify-content: center;
+  }
   .nav-menu a {
     color: white;
     padding: 1rem 1.5rem;
@@ -693,9 +698,11 @@ footer {
 
   /* تعديل لون أيقونة المنيو في الصفحة الرئيسية لتكون بيضاء دائماً */
   body.home header .mobile-menu-toggle {
+    margin-left: 10px;
     color: white;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
   }
+
   
   .hero-title {
     font-size: 2.5rem;
@@ -728,6 +735,7 @@ footer {
 }
 
 @media (max-width: 480px) {
+ 
   .hero-title {
     font-size: 2rem;
   }
