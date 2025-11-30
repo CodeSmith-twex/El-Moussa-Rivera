@@ -509,13 +509,7 @@
     margin-top: 2rem;
 }
 
-.contact-info {
-    background: linear-gradient(135deg, #3A5A5C, #BFA57B);
-    color: white;
-    padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-}
+
 
 .contact-header {
     text-align: center;
