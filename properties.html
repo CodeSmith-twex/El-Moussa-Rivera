@@ -46,7 +46,7 @@
         border-color: var(--secondary);
       }
       .property-image {
-        height: 200px;
+        height: 250px;
         overflow: hidden;
         position: relative;
       }
@@ -83,6 +83,7 @@
       }
       .property-content {
         padding: 1.5rem;
+        height:140px;
       }
       .property-title {
         font-size: 1.2rem;
@@ -289,97 +290,69 @@
 
         <!-- قائمة العقارات -->
         <!-- الجزء الرئيسي: property-grid -->
-        <div class="property-grid">
+        <div class="property-grid" >
           <!-- بطاقة 1 -->
           <div
             class="property-card"
             data-city="النرجس"
             data-status="للبيع"
-            data-type="فيلا"
+            data-type="شقق سكنية"
             data-rooms="5"
             data-area="450"
             data-price="2500000"
             data-project="completed"
           >
             <div class="property-image">
-              <img src="images/1cc22874-ae6d-418e-b7aa-1da777bbec2c.png" />
+              <a href="property-details.html?id=1"><img src="images/1.jpg" /></a>
               <div class="property-badges">
                 <span class="badge status-sale">للبيع</span>
-                <span class="badge">فيلا</span>
+                <span class="badge">شقق</span>
               </div>
             </div>
             <div class="property-content">
-              <h3 class="property-title">فيلا فاخرة في حي النرجس</h3>
+              <h3 class="property-title">شقق سكنية في حي النرجس</h3>
               <div class="property-location">
-                <i class="fas fa-map-marker-alt"></i> الرياض، حي النرجس
+                <i class="fas fa-map-marker-alt"></i>  الرياض، حي النرجس 
               </div>
+              
               <div class="property-features">
-                <div class="feature">
-                  <i class="fas fa-bed"></i
-                  ><span class="feature-value">5</span> غرف
-                </div>
-                <div class="feature">
-                  <i class="fas fa-bath"></i
-                  ><span class="feature-value">4</span> حمامات
-                </div>
-                <div class="feature">
-                  <i class="fas fa-ruler-combined"></i
-                  ><span class="feature-value">450</span> م²
-                </div>
+               <div class="feature">
+                 <i class="fas fa-map-marker-alt"> </i> موقع المشروع : 51 
+               </div>
               </div>
-              <div class="property-price">2,500,000 ريال</div>
-              <div class="property-actions">
-                <a
-                  href="property-details.html?id=1"
-                  class="btn btn-secondary"
-                  style="flex: 1"
-                  >تفاصيل</a
-                >
-                <a href="contact.html" class="btn btn-primary" style="flex: 1"
-                  >تواصل</a
-                >
-              </div>
+
             </div>
+
           </div>
 
           <!-- بطاقة 2 -->
           <div
             class="property-card"
-            data-city="السويدي"
+            data-city="النرجس"
             data-status="للبيع"
-            data-type="شقة"
+            data-type="فلل"
             data-rooms="3"
             data-area="180"
             data-price="1200000"
             data-project="completed"
           >
             <div class="property-image">
-              <img src="images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png" />
+              <a href="property-details.html?id=2"><img src="images/2.jpg" /></a>
               <div class="property-badges">
                 <span class="badge status-sale">للبيع</span>
-                <span class="badge">شقة</span>
+                <span class="badge">فلل</span>
               </div>
             </div>
             <div class="property-content">
-              <h3 class="property-title">شقة فاخرة بإطلالة جزابه</h3>
+              <h3 class="property-title">فلل دبلكس فاخرة بإطلالة جزابه</h3>
               <div class="property-location">
-                <i class="fas fa-map-marker-alt"></i> الرياض, حي السويدي
+                <i class="fas fa-map-marker-alt"></i> الرياض, حي النرجس
               </div>
               <div class="property-features">
-                <div class="feature">
-                  <i class="fas fa-bed"></i
-                  ><span class="feature-value">3</span> غرف
-                </div>
-                <div class="feature">
-                  <i class="fas fa-bath"></i
-                  ><span class="feature-value">2</span> حمامات
-                </div>
-                <div class="feature">
-                  <i class="fas fa-ruler-combined"></i
-                  ><span class="feature-value">180</span> م²
-                </div>
+                 <div class="feature">
+                 <i class="fas fa-map-marker-alt"> </i> موقع المشروع : 52 
+               </div>
               </div>
-              <div class="property-price">1,200,000 ريال</div>
               <div class="property-actions">
                 <a
                   href="property-details.html?id=2"
@@ -391,47 +364,39 @@
                   >تواصل</a
                 >
               </div>
+              
             </div>
           </div>
 
           <!-- بطاقة 3 -->
           <div
             class="property-card"
-            data-city="الياسمين"
+            data-city="الملقا"
             data-status="للإيجار"
-            data-type="مكتب"
+            data-type="فلل"
             data-rooms="4"
             data-area="220"
             data-price="120000"
             data-project="completed"
           >
             <div class="property-image">
-              <img src="images/asdpng.png" />
+               <a href="property-details.html?id=3"><img src="images/3.jpg" /></a>
               <div class="property-badges">
                 <span class="badge status-rent">للإيجار</span>
-                <span class="badge">مكتب</span>
+                <span class="badge">فلل</span>
               </div>
             </div>
             <div class="property-content">
-              <h3 class="property-title">مكتب تجاري في الياسمين</h3>
+              <h3 class="property-title">فلل دبلكس فاخرة </h3>
               <div class="property-location">
-                <i class="fas fa-map-marker-alt"></i> الرياض, حي الياسمين
+                <i class="fas fa-map-marker-alt"></i> الرياض, حي الملقا
               </div>
               <div class="property-features">
                 <div class="feature">
-                  <i class="fas fa-bed"></i
-                  ><span class="feature-value">4</span> غرف
-                </div>
-                <div class="feature">
-                  <i class="fas fa-bath"></i
-                  ><span class="feature-value">2</span> حمامات
-                </div>
-                <div class="feature">
-                  <i class="fas fa-ruler-combined"></i
-                  ><span class="feature-value">220</span> م²
-                </div>
+                 <i class="fas fa-map-marker-alt"> </i> موقع المشروع : 53 
+               </div>
               </div>
-              <div class="property-price">120,000 ريال / سنوياً</div>
+              
               <div class="property-actions">
                 <a
                   href="property-details.html?id=3"
@@ -449,41 +414,32 @@
           <!-- بطاقة 4 -->
           <div
             class="property-card"
-            data-city="العليا"
+            data-city="النرجس"
             data-status="للبيع"
-            data-type="شقة"
+            data-type="فلل"
             data-rooms="2"
             data-area="160"
             data-price="950000"
             data-project="completed"
           >
             <div class="property-image">
-              <img src="images/d468cdef-669c-4c3a-af46-7d079c45666f.png" />
+               <a href="property-details.html?id=4"><img src="images/4.jpg" /></a>
               <div class="property-badges">
                 <span class="badge status-sale">للبيع</span>
-                <span class="badge">شقة</span>
+                <span class="badge">فلل</span>
               </div>
             </div>
             <div class="property-content">
-              <h3 class="property-title">شقة سكنية في العليا</h3>
+              <h3 class="property-title">فلل تاون هاوس فاخرة </h3>
               <div class="property-location">
-                <i class="fas fa-map-marker-alt"></i> الرياض, حي العليا
+                <i class="fas fa-map-marker-alt"></i> الرياض, حي النرجس
               </div>
               <div class="property-features">
                 <div class="feature">
-                  <i class="fas fa-bed"></i
-                  ><span class="feature-value">3</span> غرف
-                </div>
-                <div class="feature">
-                  <i class="fas fa-bath"></i
-                  ><span class="feature-value">2</span> حمامات
-                </div>
-                <div class="feature">
-                  <i class="fas fa-ruler-combined"></i
-                  ><span class="feature-value">160</span> م²
-                </div>
+                 <i class="fas fa-map-marker-alt"> </i> موقع المشروع : 54 
+               </div>
               </div>
-              <div class="property-price">950,000 ريال</div>
+              
               <div class="property-actions">
                 <a
                   href="property-details.html?id=4"

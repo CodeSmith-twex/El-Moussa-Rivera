@@ -6,7 +6,6 @@
   <title>تفاصيل العقار</title>
    
   <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
-
   <link rel="stylesheet" href="unified-styles.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
@@ -16,45 +15,68 @@
       padding: 2rem;
       border-radius: 15px;
       box-shadow: var(--shadow-light);
-      margin-top: 2rem;
     }
+
     .details-image img {
       width: 100%;
       border-radius: 10px;
-      height: auto;
+      height: 450px;
       object-fit: cover;
     }
+
     .details-title {
       font-size: 2rem;
       margin: 1rem 0;
       color: var(--primary);
       font-weight: bold;
     }
-    .details-info {
-      margin: 1.5rem 0;
-      font-size: 1.1rem;
-      color: var(--gray-dark);
-      
-    }
+
     .details-info div {
       margin-bottom: 10px;
+      font-size: 1.1rem;
+      color: var(--gray-dark);
     }
-    .details-price {
-      font-size: 1.8rem;
-      color: var(--primary);
-      font-weight: bold;
-      margin: 1.5rem 0;
+
+    .details-description {
+      background: #f8f8f8;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1.5rem;
+      font-size: 1.1rem;
+      line-height: 1.8;
     }
-    .btn-contact {
+
+    .share-buttons {
+      margin-top: 2rem;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .share-buttons a {
+      padding: 0.8rem;
+      text-align: center;
+      color: white;
+      font-size: 1.1rem;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+    }
+
+    .wa { background: #25D366; }
+    .tw { background: #1DA1F2; }
+    .fb { background: #1877F2; }
+
+    .btn-back {
       display: block;
       width: 100%;
       padding: 1rem;
       background: var(--primary);
-      color: #fff;
+      color: white;
       border-radius: 10px;
+      margin-top: 2rem;
       text-align: center;
       font-size: 1.2rem;
-      margin-top: 1rem;
     }
   </style>
 </head>
@@ -63,12 +85,11 @@
 
 <header>
   <div class="container header-container">
-    <div class="logo"> <a href="index.html">  <img
-            style="height: 60px"
-            src="images/شعار بدون كتابه.png"
-            alt="الموسى ريفييرا"
-          /></a></div>
-   
+    <div class="logo">
+      <a href="index.html">
+        <img style="height: 60px" src="images/شعار بدون كتابه.png" alt="الموسى ريفييرا" />
+      </a>
+    </div>
   </div>
 </header>
 
@@ -84,17 +105,23 @@
       <h1 id="prop-title" class="details-title"></h1>
 
       <div class="details-info">
-        <div><i class="fas fa-map-marker-alt"></i> <span id="prop-location"></span></div>
-        <div><i class="fas fa-bed"></i> <span id="prop-rooms"></span> غرف</div>
-        <div><i class="fas fa-bath"></i> <span id="prop-baths"></span> حمامات</div>
+        <div><i class="fas fa-map-marker-alt"></i> المدينة: <span id="prop-location"></span></div>
+        <div><i class="fas fa-map-marker-alt"></i> موقع المشروع:<span id="prop-location3"></span></div>
         <div><i class="fas fa-ruler-combined"></i> المساحة: <span id="prop-area"></span> م²</div>
-        <div><i class="fas fa-tag"></i> النوع: <span id="prop-type"></span></div>
-        <div><i class="fas fa-info-circle"></i> الحالة: <span id="prop-status"></span></div>
       </div>
 
-      <div id="prop-price" class="details-price"></div>
-      <a href="properties.html" class="btn-contact">العودة الي الخلف</a>
-      <a href="contact.html" class="btn-contact">تواصل معنا بخصوص هذا العقار</a>
+      <div class="details-description" id="prop-description"></div>
+
+      <!-- أزرار المشاركة -->
+      <div class="share-buttons">
+        <h2>المشاركة </h2>
+        <a id="share-wa" class="wa" target="_blank"><i class="fab fa-whatsapp"></i> </a>
+        <a id="share-tw" class="tw" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a id="share-fb" class="fb" target="_blank"><i class="fab fa-facebook"></i></a>
+      </div>
+
+      <a href="contact.html" class="btn-back">  تواصل معنا</a>
+      <a href="properties.html" class="btn-back">العودة إلى الخلف</a>
 
     </div>
 
@@ -102,102 +129,81 @@
 </section>
 
 <script>
-  // ======================
-  // بيانات العقارات
-  // ======================
 
   const properties = {
     1: {
-      title: "فيلا فاخرة في حي النرجس",
-      image: "images/1cc22874-ae6d-418e-b7aa-1da777bbec2c.png",
-      location: "الرياض، حي النرجس",
-      rooms: "5",
-      baths: "4",
+      title: "شقق سكنية في حي النرجس",
+      image: "images/1.jpg",
+      location: "الرياض – حي النرجس",
+      location3: "  51",
       area: "450",
-      type: "فيلا",
-      status: "للبيع",
-      price: "2,500,000 ريال"
+      description: "مشروع سكني مميز يوفر شقق عصرية بتشطيبات فاخرة، قريب من جميع الخدمات الرئيسية."
     },
     2: {
-      title: "شقة فاخرة بإطلالة جزابة",
-      image: "images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png",
-      location: "الرياض, حي السويدي",
-      rooms: "3",
-      baths: "2",
+      title: "فلل دبلكس فاخرة بإطلالة جذابة",
+      image: "images/2.jpg",
+      location: "الرياض – حي النرجس",
+      location3: "  52",
       area: "180",
-      type: "شقة",
-      status: "للبيع",
-      price: "1,200,000 ريال"
+      description: "فلل فاخرة بتصميم راقي وحديث، مناسبة للعائلات وتتميز بإطلالة جميلة."
     },
     3: {
-      title: "مكتب تجاري في الياسمين ",
-      image: "images/asdpng.png",
-      location: "الرياض, حي الياسمين",
-      rooms: "4",
-      baths: "2",
+      title: "فلل دبلكس فاخرة ",
+      image: "images/3.jpg",
+      location: "الرياض – حي الملقا",
+      location3: "  53",
       area: "220",
-      type: "مكتب",
-      status: "للإيجار",
-      price: "120,000 ريال / سنوياً"
+      description: "فلل راقية في أحد أفضل أحياء شمال الرياض، بمساحات رحبة وتصميم مميز."
     },
-    4: {
-      title: "شقة سكنية في  العليا",
-      image: "images/d468cdef-669c-4c3a-af46-7d079c45666f.png",
-      location: "الرياض, حي العليا",
-      rooms: "3",
-      baths: "2",
-      area: "160",
-      type: "شقة",
-      status: "للبيع",
-      price: "950,000 ريال"
+      4: {
+      title: "فلل تاون هاوس فخرة ",
+      image: "images/4.jpg",
+      location: "الرياض – حي النرجس",
+      location3: "  54",
+      area: "220",
+      description: "فلل راقية في أحد أفضل أحياء شمال الرياض، بمساحات رحبة وتصميم مميز."
     },
-    5: {
-      title: "فيلا راقية في حي العزيزية",
-      image: "images/ddab0cd1-e375-4092-8132-8ed3a49f1748.png",
-      location: "الرياض, حي العزيزية",
-      rooms: "6",
-      baths: "5",
-      area: "520",
-      type: "فيلا",
-      status: "للبيع",
-      price: "3,200,000 ريال"
+       5: {
+      title: "فلل تاون هاوس في النرجس",
+      image: "images/4.jpg",
+      location: "الرياض – حي النرجس",
+      location3: "  54",
+      area: "220",
+      description: "فلل راقية في أحد أفضل أحياء شمال الرياض، بمساحات رحبة وتصميم مميز."
     },
-    6: {
-      title: "فيلا راقية في حي الملقا",
-      image: "images/7b996429-01ab-44c9-8cf6-08fc77324ee6.png",
-      location: "الرياض، حي الملقا",
-      rooms: "2-4",
-      baths: "2-3",
-      area: "120-250",
-      type: "شقق",
-      status: "تحت الإنشاء",
-      price: "يبدأ من 850,000 ريال"
-    }
+       6: {
+      title: "فلل تاون هاوس في النرجس",
+      image: "images/4.jpg",
+      location: "الرياض – حي النرجس",
+      location3: "  54",
+      area: "220",
+      description: "فلل راقية في أحد أفضل أحياء شمال الرياض، بمساحات رحبة وتصميم مميز."
+    },
+
   };
 
-  // ======================
-  // قراءة ID من الرابط
-  // ======================
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
 
-  // إذا مافي ID رجع للصفحة السابقة
   if (!id || !properties[id]) {
     window.location.href = "properties.html";
   }
 
-  // تحميل البيانات للصفحة
   const prop = properties[id];
 
   document.getElementById("prop-title").textContent = prop.title;
   document.getElementById("prop-image").src = prop.image;
   document.getElementById("prop-location").textContent = prop.location;
-  document.getElementById("prop-rooms").textContent = prop.rooms;
-  document.getElementById("prop-baths").textContent = prop.baths;
+  document.getElementById("prop-location3").textContent = prop.location3;
   document.getElementById("prop-area").textContent = prop.area;
-  document.getElementById("prop-type").textContent = prop.type;
-  document.getElementById("prop-status").textContent = prop.status;
-  document.getElementById("prop-price").textContent = prop.price;
+  document.getElementById("prop-description").textContent = prop.description;
+
+  const pageURL = window.location.href;
+  const shareText = ` تفاصيل  العقار:  ${prop.title} ${pageURL} `;
+
+  document.getElementById("share-wa").href = `https://wa.me/?text=${encodeURIComponent(shareText)}`;
+  document.getElementById("share-tw").href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}`;
+  document.getElementById("share-fb").href = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(pageURL)}`;
 
 </script>
 
