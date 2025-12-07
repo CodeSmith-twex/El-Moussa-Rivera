@@ -212,49 +212,7 @@
               </select>
             </div>
 
-            <div class="form-group">
-              <label class="form-label">عدد الغرف</label>
-              <select id="rooms-filter" class="form-control">
-                <option value="">الكل</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5+</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">المساحة (م²)</label>
-              <select id="area-filter" class="form-control">
-                <option value="">الكل</option>
-                <option value="1">أقل من 150</option>
-                <option value="2">150 - 300</option>
-                <option value="3">301 - 500</option>
-                <option value="4">أكثر من 500</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">السعر</label>
-              <select id="price-filter" class="form-control">
-                <option value="">الكل</option>
-                <option value="1">أقل من 500,000 ريال</option>
-                <option value="2">500,000 - 1,000,000 ريال</option>
-                <option value="3">1,000,000 - 2,000,000 ريال</option>
-                <option value="4">أكثر من 2,000,000 ريال</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label class="form-label">الحالة</label>
-              <select id="status-filter" class="form-control">
-                <option value="">الكل</option>
-                <option value="للبيع">للبيع</option>
-                <option value="للإيجار">للإيجار</option>
-              </select>
-            </div>
-
+            
             <div class="form-group">
               <label class="form-label">نوع المشروع</label>
               <select id="project-filter" class="form-control">
@@ -298,9 +256,7 @@
             data-city="النرجس"
             data-status="للبيع"
             data-type="شقق سكنية"
-            data-rooms="5"
-            data-area="450"
-            data-price="2500000"
+           
             data-project="completed"
           >
             <div class="property-image">
@@ -332,9 +288,7 @@
             data-city="النرجس"
             data-status="للبيع"
             data-type="فلل"
-            data-rooms="3"
-            data-area="180"
-            data-price="1200000"
+           
             data-project="completed"
           >
             <div class="property-image">
@@ -376,9 +330,7 @@
             data-city="الملقا"
             data-status="للإيجار"
             data-type="فلل"
-            data-rooms="4"
-            data-area="220"
-            data-price="120000"
+           
             data-project="completed"
           >
             <div class="property-image">
@@ -421,9 +373,7 @@
             data-city="النرجس"
             data-status="للبيع"
             data-type="فلل"
-            data-rooms="2"
-            data-area="160"
-            data-price="950000"
+           
             data-project="completed"
           >
             <div class="property-image">
@@ -466,9 +416,7 @@
             data-city="العزيزية"
             data-status="للبيع"
             data-type="فيلا"
-            data-rooms="5"
-            data-area="520"
-            data-price="3200000"
+           
             data-project="completed"
           >
             <div class="property-image">
@@ -511,14 +459,12 @@
             data-city="الملقا"
             data-status="للبيع"
             data-type="فلل"
-            data-rooms="4"
-            data-area="120-250"
-            data-price="850000"
+           
             data-project="construction"
           >
             <div class="property-image">
               <a href="property-details.html?id=6"
-                ><img src="images/6.jpg"
+                ><img style="opacity: 0.3;"  src="images/شعار بدون كتابه.png"
               /></a>
               <div class="property-badges">
                 <span class="badge status-construction">تحت الإنشاء</span>
@@ -608,92 +554,50 @@
       </div>
     </footer>
 
-    <script>
-      const cityFilter = document.getElementById("city-filter");
-      const typeFilter = document.getElementById("type-filter");
-      const roomsFilter = document.getElementById("rooms-filter");
-      const areaFilter = document.getElementById("area-filter");
-      const priceFilter = document.getElementById("price-filter");
-      const statusFilter = document.getElementById("status-filter");
-      const projectFilter = document.getElementById("project-filter");
-      const statusTabs = document.querySelectorAll(".status-tab");
-      const cards = document.querySelectorAll(".property-card");
+   <script>
+const cityFilter = document.getElementById("city-filter");
+const typeFilter = document.getElementById("type-filter");
+const projectFilter = document.getElementById("project-filter");
+const statusTabs = document.querySelectorAll(".status-tab");
+const cards = document.querySelectorAll(".property-card");
 
-      let currentStatusTab = "all";
 
-      function filterProperties() {
-        const city = cityFilter.value;
-        const type = typeFilter.value;
-        const rooms = roomsFilter.value;
-        const area = areaFilter.value;
-        const price = priceFilter.value;
-        const status = statusFilter.value;
-        const project = projectFilter.value;
+let currentStatusTab = "all";
 
-        cards.forEach((card) => {
-          const matchCity = !city || card.dataset.city === city;
-          const matchType = !type || card.dataset.type === type;
-          const matchRooms = !rooms || card.dataset.rooms === rooms;
-          const matchArea =
-            !area ||
-            (area === "1" && +card.dataset.area < 150) ||
-            (area === "2" &&
-              +card.dataset.area >= 150 &&
-              +card.dataset.area <= 300) ||
-            (area === "3" &&
-              +card.dataset.area > 300 &&
-              +card.dataset.area <= 500) ||
-            (area === "4" && +card.dataset.area > 500);
-          const matchPrice =
-            !price ||
-            (price === "1" && +card.dataset.price < 500000) ||
-            (price === "2" &&
-              +card.dataset.price >= 500000 &&
-              +card.dataset.price <= 1000000) ||
-            (price === "3" &&
-              +card.dataset.price > 1000000 &&
-              +card.dataset.price <= 2000000) ||
-            (price === "4" && +card.dataset.price > 2000000);
-          const matchStatus = !status || card.dataset.status === status;
-          const matchProject = !project || card.dataset.project === project;
-          const matchTab =
-            currentStatusTab === "all" ||
-            card.dataset.project === currentStatusTab;
 
-          card.style.display =
-            matchCity &&
-            matchType &&
-            matchRooms &&
-            matchArea &&
-            matchPrice &&
-            matchStatus &&
-            matchProject &&
-            matchTab
-              ? "block"
-              : "none";
-        });
-      }
+function filterProperties() {
+const city = cityFilter.value;
+const type = typeFilter.value;
+const project = projectFilter.value;
 
-      document
-        .getElementById("searchBtn")
-        .addEventListener("click", filterProperties);
-      cityFilter.addEventListener("change", filterProperties);
-      typeFilter.addEventListener("change", filterProperties);
-      roomsFilter.addEventListener("change", filterProperties);
-      areaFilter.addEventListener("change", filterProperties);
-      priceFilter.addEventListener("change", filterProperties);
-      statusFilter.addEventListener("change", filterProperties);
-      projectFilter.addEventListener("change", filterProperties);
 
-      statusTabs.forEach((tab) => {
-        tab.addEventListener("click", () => {
-          statusTabs.forEach((t) => t.classList.remove("active"));
-          tab.classList.add("active");
-          currentStatusTab = tab.dataset.status;
-          filterProperties();
-        });
-      });
-    </script>
+cards.forEach(card => {
+const matchCity = !city || card.dataset.city === city;
+const matchType = !type || card.dataset.type === type;
+const matchProject = !project || card.dataset.project === project;
+const matchTab = currentStatusTab === "all" || card.dataset.project === currentStatusTab;
+
+
+card.style.display = matchCity && matchType && matchProject && matchTab ? "block" : "none";
+});
+}
+
+
+document.getElementById("searchBtn").addEventListener("click", filterProperties);
+cityFilter.addEventListener("change", filterProperties);
+typeFilter.addEventListener("change", filterProperties);
+projectFilter.addEventListener("change", filterProperties);
+
+
+statusTabs.forEach(tab => {
+tab.addEventListener("click", () => {
+statusTabs.forEach(t => t.classList.remove("active"));
+tab.classList.add("active");
+currentStatusTab = tab.dataset.status;
+filterProperties();
+});
+});
+</script>
 
     <script src="unified-script.js"></script>
   </body>
