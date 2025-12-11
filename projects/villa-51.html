@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تفاصيل العقار</title>
+    <link
+      rel="shortcut icon"
+      href="../images/شعار بدون كتابه.png"
+      type="image/x-icon"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --primary-green: #8b9d83;
+        --light-green: #c8d5b9;
+        --dark-brown: #6b5d4f;
+        --light-brown: #a89080;
+        --cream: #f5f1e8;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        color: #333;
+        background-color: var(--cream);
+      }
+
+      /* Header/Navbar */
+      .navbar {
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--dark-brown)
+        );
+        padding: 1rem 0;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .navbar-brand {
+        color: white !important;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .nav-link {
+        color: rgba(255, 255, 255, 0.9) !important;
+        margin: 0 1rem;
+        transition: color 0.3s;
+      }
+
+      .nav-link:hover {
+        color: var(--light-green) !important;
+      }
+
+      /* Cover Section */
+      .cover-section {
+        height: 60vh;
+        background: linear-gradient(
+            rgba(107, 93, 79, 0.4),
+            rgba(139, 157, 131, 0.4)
+          ),
+          url("../images/1.jpg") center/cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        text-align: center;
+        position: relative;
+      }
+
+      .cover-section h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        margin-bottom: 1rem;
+      }
+
+      .cover-section p {
+        font-size: 1.3rem;
+        text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Section Styling */
+      section {
+        padding: 5rem 0;
+      }
+
+      .section-light {
+        background-color: white;
+      }
+
+      .section-green {
+        background: linear-gradient(
+          135deg,
+          var(--dark-brown),
+          var(--primary-green)
+        );
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--dark-brown);
+        margin-bottom: 1.5rem;
+      }
+
+      .section-description {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #555;
+      }
+
+      .img-container {
+        overflow: hidden;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s;
+      }
+
+      .img-container:hover {
+        transform: scale(1.02);
+      }
+
+      .img-container img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      /* Brochure Section */
+      .brochure-card {
+        background: linear-gradient(
+          135deg,
+          var(--primary-green),
+          var(--light-brown)
+        );
+        border-radius: 15px;
+        padding: 2.5rem;
+        color: white;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        margin-bottom: 2rem;
+      }
+
+      .download-btn {
+        background-color: var(--dark-brown);
+        color: white;
+        border: none;
+        padding: 1rem 2.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: all 0.3s;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .download-btn:hover {
+        background-color: #5a4d41;
+        transform: translateY(-2px);
+        box-shadow: 0 7px 20px rgba(0, 0, 0, 0.3);
+      }
+
+      .floor-details {
+        background-color: white;
+        border-radius: 15px;
+        padding: 2rem;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .floor-details h4 {
+        color: var(--dark-brown);
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .detail-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .detail-item:last-child {
+        border-bottom: none;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: var(--primary-green);
+      }
+
+      /* Floor Plan Section */
+      .floor-plan-img {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      .floor-plan-img img {
+        width: 100%;
+        height: auto;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .cover-section h1 {
+          font-size: 2.5rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+
+        .img-container img {
+          height: 300px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Cover Section -->
+    <div class="cover-section" id="home">
+      <div class="container">
+        <h1>مجموعة شقق فاخرة</h1>
+        <p>استمتع بالحياة العصرية في انسجام مع الطبيعة</p>
+      </div>
+    </div>
+
+    <!-- Title & Description Section -->
+    <section class="section-light" id="about">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="img-container">
+              <img src="../images/1.jpg" alt="Villa Exterior" />
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="section-title">مرحباً بكم في شقق ريفييرا</h2>
+            <p class="section-description">
+              في قلب هدوءٍ ساحر، تُجسّد شققنا الفاخرة مزيجًا مثاليًا بين العمارة
+              المعاصرة وجمال الطبيعة. صُمّمت كل وحدة سكنية بعناية فائقة لتوفير
+              تجربة معيشة لا مثيل لها. تتميز هذه الشقق بمساحات داخلية رحبة
+              وتشطيبات فاخرة وإطلالات خلابة، وتوفر ملاذًا مثاليًا يجمع بين
+              الراحة العصرية والأناقة الخالدة. مع مساحات معيشة مصممة بعناية
+              فائقة ومرافق عالمية المستوى، منزل أحلامك في انتظارك. استمتع
+              برفاهية المعيشة المفتوحة
+              تلبي جميع احتياجاتك. هذا أكثر من مجرد منزل، إنه أسلوب حياة.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brochure & Floor Details Section -->
+    <section class="section-green" id="details">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 mb-4">
+            <div class="brochure-card">
+              <h3 class="mb-4"><i class="fas fa-file-pdf"></i>حمّل الكتيب</h3>
+              <p class="mb-4">
+                احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
+                والمرافق والأسعار. حمّل كتيبنا الشامل الآن. .
+              </p>
+
+              <a class="download-btn" download href="../pdf/prop1.pdf">
+                <i class="fas fa-download"></i> تنزيل كتيب PDF</a
+              >
+            </div>
+          </div>
+          <div class="col-lg-6 mb-4">
+            <div class="floor-details">
+              <h4><i class="fas fa-ruler-combined"></i>مواصفات الأرضية</h4>
+              <div class="detail-item">
+                <span class="detail-label">المساحة الإجمالية: </span>
+                <span>3,500 قدم مربع</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">المساحة المبنية:</span>
+                <span>3,200 قدم مربع</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">غرف النوم:</span>
+                <span>3 غرف </span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">الحمامات:</span>
+                <span>3 حمامات كاملة</span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-label">مناطق المعيشة:</span>
+                <span>4 (الطابق الأرضي + الطابق الأول والثاني +ملحق)</span>
+              </div>
+             
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floor Plan Mapping Section -->
+    <section class="section-light" id="floorplan">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
+            <div class="floor-plan-img">
+              <img
+                src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800"
+                alt="Second Floor Plan"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6 order-lg-1">
+            <h2 class="section-title">تخطيط الطابق الثاني</h2>
+            <p class="section-description">
+              يتميز الطابق الثاني بتصميم استثنائي مصمم لضمان الخصوصية والراحة.
+              
+              ، مما يوفر ملاذًا مثاليًا لجميع أفراد العائلة.
+            </p>
+            <p class="section-description">
+              <strong>الميزات الرئيسية:</strong>
+            </p>
+            <ul class="section-description">
+              <li>ثلاثه غرف نوم منها غرف ماستر</li>
+              <li>صاله ومطبخ</li>
+              <li>ثلاثه حمامات</li>
+             
+              
+            </ul>
+            <p class="section-description">
+              تضمن النوافذ الكبيرة في جميع الأنحاء تدفق الضوء الطبيعي إلى كل
+              غرفة، بينما تخلق الأرضيات الخشبية الفاخرة والتجهيزات المصممة جوًا
+              من الفخامة الراقية.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Features Section -->
+    <section class="section-green">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 mb-4 mb-lg-0">
+            <div class="img-container">
+              <img
+                src="../images/1.jpg"
+                alt="Living Room Interior"
+              />
+            </div>
+          </div>
+          <div class="col-lg-6" >
+            <div class="floor-details">
+            <h2 class="section-title">وسائل الراحة المتميزة</h2>
+            <p class="section-description">
+              كل شقة مجهزة بأحدث وسائل الراحة المصممة لتعزيز نمط حياتك. من
+              تقنيات المنازل الذكية إلى أنظمة توفير الطاقة، لقد فكرنا في كل شيء.
+            </p>
+            <p class="section-description">
+              <strong>الميزات المضمنة:</strong>
+            </p>
+            <ul class="section-description">
+             
+              <li>تكييف وتدفئة مركزية</li>
+             
+              <li>نظام أمني مع كاميرات مراقبة</li>
+              <li>تركيب الألواح الشمسية</li>
+             
+              <li>مطبخ ممتاز مع أجهزة حديثة</li>
+            </ul>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  <!-- Contact + Share Sections Side by Side -->
+<section class="section-light">
+  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
+
+    <!-- Contact Section -->
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+      <h2 class="section-title">تواصل معنا</h2>
+      <p class="section-description mb-4">
+        للرد علي جميع الاستفسارات.
+      </p>
+
+      <a
+        href="https://wa.me/966530021919"
+        class="download-btn"
+        target="_blank"
+      >
+        <i class="fab fa-whatsapp"></i>
+        تواصل معنا عبر الواتساب
+      </a>
+    </div>
+
+    <!-- Share Buttons Section -->
+    <div style="flex: 1; min-width: 300px; text-align: center;">
+      <h2 class="section-title">مشاركة العقار</h2>
+      <p class="section-description mb-4">
+        شارك هذا العقار مع أصدقائك على مواقع التواصل الاجتماعي
+      </p>
+
+      <div style="display: flex; justify-content: center; gap: 20px;">
+
+        <!-- WhatsApp -->
+        <a
+          href="https://api.whatsapp.com/send?text=شاهد هذا العقار الرائع: %20"
+          target="_blank"
+          class="download-btn"
+          style="background-color: #25d366;"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Facebook -->
+        <a
+          href="https://www.facebook.com/sharer/sharer.php?u="
+          target="_blank"
+          class="download-btn"
+          style="background-color: #1877f2;"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a
+          href="https://twitter.com/intent/tweet?url=&text=عقار رائع يستحق المشاهدة: "
+          target="_blank"
+          class="download-btn"
+          style="background-color: #1da1f2;"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    
+    <!-- Footer -->
+    <footer
+      style="
+        background: linear-gradient(
+          135deg,
+          var(--dark-brown),
+          var(--primary-green)
+        );
+        color: white;
+        padding: 2rem 0;
+        text-align: center;
+      "
+    >
+      <div class="container">
+        <!-- <p class="mb-0"></p> -->
+         
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+  // الحصول على رابط الصفحة الحالي
+  const currentURL = window.location.href;
+
+  // تحديث روابط المشاركة
+  document.querySelectorAll("a").forEach((btn) => {
+    if (btn.href.includes("whatsapp")) {
+      btn.href += encodeURIComponent(currentURL);
+    }
+    if (btn.href.includes("facebook")) {
+      btn.href += encodeURIComponent(currentURL);
+    }
+    if (btn.href.includes("twitter")) {
+      btn.href = btn.href.replace("url=", "url=" + encodeURIComponent(currentURL));
+    }
+  });
+</script>
+
+  </body>
+</html>
