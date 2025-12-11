@@ -9,6 +9,7 @@
       href="../images/شعار بدون كتابه.png"
       type="image/x-icon"
     />
+     <link rel="stylesheet" href="../unified-styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -222,9 +223,56 @@
           height: 300px;
         }
       }
+       @media (max-width: 992px) {
+        .nav-menu {
+          position: absolute;
+          top: 90px;
+          right: 0;
+          width: 100%;
+          background: white;
+          flex-direction: column;
+          padding: 25px 0;
+          text-align: center;
+          display: none;
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-menu.open {
+          display: flex;
+        }
+
+        .mobile-menu-toggle {
+          display: block;
+        }
+      }
     </style>
   </head>
   <body>
+
+     <header>
+      <div style="text-decoration: none;" class="container header-container">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              style="height: 60px"
+              src="../images/شعار بدون كتابه.png"
+              alt="الموسى ريفييرا"
+          /></a>
+        </div>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i><i class="fas fa-times"></i>
+        </button>
+        <ul  class="nav-menu">
+          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html">الرئيسية</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../properties.html">العقارات</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html#about-us">من نحن</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../request-property.html">اطلب عقارك</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html#services">خدماتنا</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../register.html">تسجيل</a></li>
+          <li><a style="text-decoration: none; color: var(--primary)" href="../contact.html">تواصل معنا</a></li>
+        </ul>
+      </div>
+    </header>
     <!-- Cover Section -->
     <div class="cover-section" id="home">
       <div class="container">
@@ -265,14 +313,14 @@
         <div class="row">
           <div class="col-lg-6 mb-4">
             <div class="brochure-card">
-              <h3 class="mb-4"><i class="fas fa-file-pdf"></i>حمّل الكتيب</h3>
+               <h3 class="mb-4"><i class="fas fa-file-pdf"></i>معاينة الكتيب</h3>
               <p class="mb-4">
                 احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
-                والمرافق والأسعار. حمّل كتيبنا الشامل الآن. .
+                والمرافق والأسعار. انظر الي كتيبنا الشامل الآن. .
               </p>
 
-              <a class="download-btn" download href="../pdf/prop5.pdf">
-                <i class="fas fa-download"></i> تنزيل كتيب PDF</a
+              <a class="download-btn" href="../pdf/prop5.pdf" target="_blank">
+                <i class="fas fa-download"></i> معاينة الكتيب PDF</a
               >
             </div>
           </div>
@@ -458,25 +506,62 @@
 
 
     
+     
     <!-- Footer -->
-    <footer
-      style="
-        background: linear-gradient(
-          135deg,
-          var(--dark-brown),
-          var(--primary-green)
-        );
-        color: white;
-        padding: 2rem 0;
-        text-align: center;
-      "
-    >
-      <div class="container">
-        <!-- <p class="mb-0"></p> -->
-         
+    <footer>
+      <div style="text-decoration: none;" class="container">
+        <div class="footer-container">
+          <div>
+            <div class="footer-logo">
+              <img style="height: 150px" src="../images/شعار الموسي.png" />
+            </div>
+            <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
+          </div>
+          <div>
+            <h3 class="footer-title">روابط سريعة</h3>
+            <ul class="footer-links">
+              <li><a style="text-decoration: none;" href="index.html">الرئيسية</a></li>
+              <li><a style="text-decoration: none;" href="projects.html">العقارات</a></li>
+              <li><a style="text-decoration: none;" href="index.html#about-us">من نحن</a></li>
+              <li><a style="text-decoration: none;" href="request-property.html">اطلب عقارك</a></li>
+              <li><a style="text-decoration: none;" href="index.html#services">خدماتنا</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="footer-title">تواصل معنا</h3>
+            <div class="contact-info">
+              <p>موقعنا : الرياض , حي النرجس, طريق عثمان بن عفان</p>
+              <p>هاتف: 966500670503+</p>
+              <p>هاتف:966598494952+</p>
+              <a
+                href="https://wa.me/966530021919"
+                class="btn btn-secondary whatsapp-button"
+                target="_blank"
+                
+              >
+                <i class="fab fa-whatsapp"></i>
+                تواصل معنا عبر الواتساب
+              </a>
+            </div>
+
+            <div class="social-media">
+              <a  style="text-decoration: none;" href="#" class="social-icon"><i class="fab fa-tiktok"></i></a>
+              <a style="text-decoration: none;" href="#" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a style="text-decoration: none;" href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+              <a style="text-decoration: none;" href="#" class="social-icon"
+                ><i class="fab fa-snapchat"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="copyright">
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا العقارية</p>
+        </div>
       </div>
     </footer>
-
+     <script src="../unified-script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script>
   // الحصول على رابط الصفحة الحالي
