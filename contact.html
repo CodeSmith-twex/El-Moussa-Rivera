@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>الموسى ريفييرا  للتطوير العقاري - تواصل معنا</title>
-    <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+    <title>الموسى ريفييرا للتطوير العقاري - تواصل معنا</title>
+    <link
+      rel="shortcut icon"
+      href="images/شعار بدون كتابه.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="unified-styles.css" />
     <!-- Font Awesome للأيقونات -->
     <link
@@ -134,10 +138,11 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <a href="index.html">  <img
-            style="height: 60px"
-            src="images/شعار بدون كتابه.png"
-            alt="الموسى ريفييرا"
+          <a href="index.html">
+            <img
+              style="height: 60px"
+              src="images/شعار بدون كتابه.png"
+              alt="الموسى ريفييرا"
           /></a>
         </div>
         <button class="mobile-menu-toggle">
@@ -149,7 +154,7 @@
           <li><a href="index.html#about-us">من نحن</a></li>
           <li><a href="request-property.html">اطلب عقارك</a></li>
           <li><a href="index.html#services">خدماتنا</a></li>
-          <li><a href="register.html">تسجيل</a></li>
+          <!-- <li><a href="register.html">تسجيل</a></li> -->
           <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
       </div>
@@ -179,7 +184,6 @@
               <div>
                 <h3>البريد الإلكتروني</h3>
                 <p>hho.m@hotmail.com</p>
-                
               </div>
             </div>
 
@@ -202,20 +206,19 @@
             </div>
 
             <div class="contact-item">
-              
               <a
                 href="https://wa.me/966530021919"
                 class="btn btn-secondary whatsapp-button"
                 target="_blank"
               >
-                <i  class="fab fa-whatsapp"></i>
+                <i class="fab fa-whatsapp"></i>
                 تواصل معنا عبر الواتساب
               </a>
             </div>
           </div>
 
           <div class="contact-form-wrapper">
-            <form class="modern-form">
+            <form class="modern-form" id="whatsappForm">
               <div class="form-group">
                 <label for="name" class="form-label">الاسم الكامل</label>
                 <div class="input-with-icon">
@@ -298,7 +301,7 @@
         <div class="map-container">
           <!-- يمكن استبدال هذا برابط خريطة جوجل الفعلي للموقع -->
           <iframe
-             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.442624689158!2d46.6786638!3d24.8370002!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efb316462a165%3A0x30da07154158e197!2z2YXYs9iq2LTZg9mKINmE2YrZhNin2YTZhNmK2YUg2KfZhNiq2KfZhiDYqNmK2YHYp9mK2Kkg!5e0!3m2!1sar!2ssa!4v1732880000000!5m2!1sar!2ssa" 
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d198.30649733673727!2d46.67875862946098!3d24.836926904328323!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDUwJzEzLjQiTiA0NsKwNDAnNDMuMSJF!5e1!3m2!1sar!2ssa!4v1766237252040!5m2!1sar!2ssa" 
             allowfullscreen=""
             loading="lazy"
           ></iframe>
@@ -319,8 +322,6 @@
             <p>السبت: 10:00 ص - 2:00 م</p>
             <p>الجمعة: مغلق</p>
           </div>
-
-         
         </div>
       </div>
     </section>
@@ -331,7 +332,11 @@
         <div class="footer-container">
           <div>
             <div class="footer-logo">
-              <img style="height: 150px;" src="images/شعار الموسي.png" alt="الموسى ريفييرا للتطوير العقاري" />
+              <img
+                style="height: 150px"
+                src="images/شعار الموسي.png"
+                alt="الموسى ريفييرا للتطوير العقاري"
+              />
             </div>
             <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
           </div>
@@ -344,7 +349,6 @@
               <li><a href="index.html#about-us">من نحن</a></li>
               <li><a href="request-property.html">اطلب عقارك</a></li>
               <li><a href="index.html#services">خدماتنا</a></li>
-              
             </ul>
           </div>
 
@@ -384,5 +388,33 @@
     </footer>
 
     <script src="unified-script.js"></script>
+
+    <script>
+      document
+        .getElementById("whatsappForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const name = document.getElementById("name").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+          const subject = document.getElementById("subject").value;
+          const message = document.getElementById("message").value;
+
+          const whatsappNumber = "966504187428"; // رقمك
+
+          const text =
+            `*رسالة جديدة من الموقع*%0A%0A` +
+            `👤 الاسم: ${name}%0A` +
+            `📧 البريد: ${email}%0A` +
+            `📞 الهاتف: ${phone}%0A` +
+            `📝 الموضوع: ${subject}%0A%0A` +
+            `💬 الرسالة:%0A${message}`;
+
+          const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+          window.open(url, "_blank");
+        });
+    </script>
   </body>
 </html>

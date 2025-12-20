@@ -3,8 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد." /> 
-    <meta name="keywords" content="عقارات, تمويل عقاري, استشارات عقارية, الموسى ريفييرا, تطوير عقاري, شراء عقار, بيع عقار, استثمار عقاري" /> 
+    <meta
+      name="description"
+      content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد."
+    />
+    <meta
+      name="keywords"
+      content="عقارات, تمويل عقاري, استشارات عقارية, الموسى ريفييرا, تطوير عقاري, شراء عقار, بيع عقار, استثمار عقاري"
+    />
     <title>الموسى ريفييرا للتطوير العقاري - الصفحة الرئيسية</title>
     <link
       rel="shortcut icon"
@@ -22,16 +28,76 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+    <style>
+      /* تصغير عام */
+      .about-us-image {
+        max-width: 460px; /* ⬅ أصغر بوضوح */
+        width: 100%;
+        margin: auto;
+      }
+
+      /* السلايدر */
+      .slider {
+        position: relative;
+        width: 100%;
+        height: 460px; /* ⬅ تحكم مباشر بالحجم */
+        overflow: hidden;
+        border-radius: 12px;
+      }
+
+      /* الصور */
+      .slides {
+        width: 100%;
+        display: flex;
+        height: 100%;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .slides img {
+        width: 110%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* الأزرار */
+      .nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: rgba(0, 0, 0, 0.4);
+        color: #fff;
+        border: none;
+        font-size: 18px;
+        padding: 6px 10px;
+        cursor: pointer;
+        border-radius: 50%;
+      }
+
+      .nav.prev {
+        right: 8px;
+      }
+      .nav.next {
+        left: 8px;
+      }
+
+      /* 📱 موبايل */
+      @media (max-width: 768px) {
+        .about-us-image {
+          max-width: 100%;
+        }
+      }
+    </style>
   </head>
   <body class="home">
     <!-- الرأس -->
     <header>
       <div class="container header-container">
         <div class="logo">
-        <a href="index.html">  <img
-            style="height: 60px"
-            src="images/شعار بدون كتابه.png"
-            alt="الموسى ريفييرا"
+          <a href="index.html">
+            <img
+              style="height: 60px"
+              src="images/شعار بدون كتابه.png"
+              alt="الموسى ريفييرا"
           /></a>
         </div>
         <button class="mobile-menu-toggle">
@@ -43,7 +109,7 @@
           <li><a href="index.html#about-us">من نحن</a></li>
           <li><a href="request-property.html">اطلب عقارك</a></li>
           <li><a href="index.html#services">خدماتنا</a></li>
-          <li><a href="register.html">تسجيل</a></li>
+          <!-- <li><a href="register.html">تسجيل</a></li> -->
           <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
       </div>
@@ -82,8 +148,6 @@
             <h3 class="service-title">الاستشارات العقارية</h3>
             <p>نقدم لك أفضل الحلول والنصائح.</p>
           </div>
-
-         
 
           <div class="service-card">
             <img
@@ -136,8 +200,6 @@
         </div>
       </div>
     </section>
-
-   
 
     <!-- قسم الشركاء -->
     <section class="section" style="background-color: #f9f9f9">
@@ -270,10 +332,17 @@
             >
           </div>
           <div class="about-us-image">
-            <img
-              src="images/Screenshot 2025-03-04 at 15.27.52.png"
-              alt="عن الموسي ريفييرا العقارية"
-            />
+            <div class="slider">
+              <div class="slides">
+                <img src="images/1.jpg" alt="عن الشركة" />
+                <img src="images/2.jpg" alt="مشاريعنا" />
+                <img src="images/4.jpg" alt="استثمار عقاري" />
+                <img src="images/7.jpg" alt="استثمار عقاري" />
+              </div>
+
+              <button class="nav prev">&#10094;</button>
+              <button class="nav next">&#10095;</button>
+            </div>
           </div>
         </div>
       </div>
@@ -346,7 +415,6 @@
               <li><a href="index.html#about-us">من نحن</a></li>
               <li><a href="request-property.html">اطلب عقارك</a></li>
               <li><a href="index.html#services">خدماتنا</a></li>
-              
             </ul>
           </div>
 
@@ -389,5 +457,79 @@
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script src="unified-script.js"></script>
+
+    <script>
+      const slides = document.querySelector(".slides");
+      const totalSlides = slides.children.length;
+      let index = 0;
+
+      function showSlide(i) {
+        slides.style.transform = `translateX(${i * 100}%)`;
+      }
+
+      document.querySelector(".next").onclick = () => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+      };
+
+      document.querySelector(".prev").onclick = () => {
+        index = (index - 1 + totalSlides) % totalSlides;
+        showSlide(index);
+      };
+
+      /* تشغيل تلقائي */
+      setInterval(() => {
+        index = (index + 1) % totalSlides;
+        showSlide(index);
+      }, 4000);
+    </script>
+
+  <script>
+  document
+    .getElementById("contact-form-short")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("contact-name").value;
+      const phone = document.getElementById("contact-phone").value;
+      const interest = document.getElementById("contact-interest").value;
+
+      let interestText = "";
+      switch (interest) {
+        case "buy":
+          interestText = "شراء عقار";
+          break;
+        case "sell":
+          interestText = "بيع عقار";
+          break;
+        case "rent":
+          interestText = "استئجار عقار";
+          break;
+        case "invest":
+          interestText = "استثمار عقاري";
+          break;
+        default:
+          interestText = "غير محدد";
+      }
+
+      const whatsappNumber = "966504187428"; // رقمك
+      // 966530021919
+      // نص عادي بدون إيموجي وبدون %0A
+      const message =
+        "طلب تواصل من مهتم\n\n" +
+        "الاسم: " + name + "\n" +
+        "الجوال: " + phone + "\n" +
+        "الاهتمام: " + interestText;
+
+      const url =
+        "https://wa.me/" +
+        whatsappNumber +
+        "?text=" +
+        encodeURIComponent(message);
+
+      window.open(url, "_blank");
+    });
+</script>
+
   </body>
 </html>

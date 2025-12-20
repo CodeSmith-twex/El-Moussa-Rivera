@@ -195,6 +195,121 @@
         width: 100%;
         height: auto;
       }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 1.5rem;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 12px 15px;
+        text-align: center;
+      }
+      th {
+        background-color: var(--primary-green);
+        color: white;
+        font-weight: 600;
+      }
+      tr:nth-child(even) {
+        background-color: #f9f9f9;
+      }
+      .floor {
+        font-weight: 700;
+        color: var(--dark-brown);
+      }
+      .separator td {
+        border: none;
+        background-color: transparent;
+        height: 15px;
+      }
+      .separator td:first-child {
+        border-top: 2px solid var(--primary-green);
+      }
+      .table-responsive-custom {
+        width: 100%;
+        overflow-x: auto;
+      }
+
+      .table-responsive-custom table {
+        min-width: 900px;
+      }
+
+      /* Google Map Styling */
+      .map-container {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 576px) {
+        .map-container {
+          height: 300px;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .cover-section {
+          height: 45vh;
+          padding: 20px;
+        }
+
+        .cover-section h1 {
+          font-size: 1.8rem;
+        }
+
+        .cover-section p {
+          font-size: 1rem;
+        }
+
+        .section {
+          padding: 3rem 0;
+        }
+
+        .img-container img {
+          height: 220px;
+        }
+      }
+      @media (max-width: 992px) {
+        .nav-menu li {
+          margin: 12px 0;
+        }
+
+        .nav-menu a {
+          font-size: 1.1rem;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .download-btn {
+          padding: 0.8rem 1.5rem;
+          font-size: 1rem;
+          width: 100%;
+          display: inline-block;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .section-title {
+          font-size: 1.6rem;
+          text-align: center;
+        }
+
+        .section-description {
+          font-size: 1rem;
+          text-align: justify;
+        }
+      }
 
       /* Responsive */
       @media (max-width: 768px) {
@@ -285,13 +400,13 @@
               >خدماتنا</a
             >
           </li>
-          <li>
+          <!-- <li>
             <a
               style="text-decoration: none; color: var(--primary)"
               href="../register.html"
               >تسجيل</a
             >
-          </li>
+          </li> -->
           <li>
             <a
               style="text-decoration: none; color: var(--primary)"
@@ -340,21 +455,19 @@
     <!-- Brochure & Floor Details Section -->
     <section class="section-green" id="details">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="brochure-card">
-              <h3 class="mb-4"><i class="fas fa-file-pdf"></i>معاينة الكتيب</h3>
-              <p class="mb-4">
-                احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
-                والمرافق والأسعار. انظر الي كتيبنا الشامل الآن. .
-              </p>
+        <div class="brochure-card">
+          <h3 class="mb-4"><i class="fas fa-file-pdf"></i>معاينة الكتيب</h3>
+          <p class="mb-4">
+            احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
+            والمرافق والأسعار. انظر الي كتيبنا الشامل الآن. .
+          </p>
 
-              <a class="download-btn" href="../pdf/prop1.pdf" target="_blank">
-                <i class="fas fa-download"></i> معاينة الكتيب PDF</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
+          <a class="download-btn" href="../pdf/prop1.pdf" target="_blank">
+            <i class="fas fa-download"></i> معاينة الكتيب PDF</a
+          >
+        </div>
+
+        <!-- <div class="col-lg-6 mb-4">
             <div class="floor-details">
               <h4><i class="fas fa-ruler-combined"></i>مواصفات الأرضية</h4>
               <div class="detail-item">
@@ -378,8 +491,7 @@
                 <span>4 (الطابق الأرضي + الطابق الأول والثاني +ملحق)</span>
               </div>
             </div>
-          </div>
-        </div>
+          </div> -->
       </div>
     </section>
 
@@ -415,6 +527,320 @@
               من الفخامة الراقية.
             </p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floor Plan Mapping Section -->
+    <section class="section-light" id="floorplan">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="table-responsive-custom">
+            <h2>المبنى A</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>الدور</th>
+                  <th>كود الوحدة</th>
+                  <th>المساحة</th>
+                  <th>محتوى الوحدة</th>
+                  <th>السعر</th>
+                  <th>ملاحظات</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- الدور الأرضي -->
+                <tr>
+                  <td class="floor" rowspan="4">الدور الأرضي</td>
+                  <td>A-1</td>
+                  <td>154,7</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-2</td>
+                  <td>179,37</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,177,540 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-3</td>
+                  <td>200,95</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,159,424 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-4</td>
+                  <td>113,69</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,069,960 ريال</td>
+                  <td></td>
+                </tr>
+
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+
+                <!-- الدور الأول والثاني -->
+                <tr>
+                  <td class="floor" rowspan="8">الدور الأول والثاني</td>
+                  <td>A-5</td>
+                  <td>167,84</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,403,990 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>A-6</td>
+                  <td>180,65</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,222,830 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-7</td>
+                  <td>165,24</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-8</td>
+                  <td>170,59</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,385,874 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>A-9</td>
+                  <td>174,34</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,440,222 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>A-10</td>
+                  <td>165,32</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,259,062 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-11</td>
+                  <td>175,24</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,259,062 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>A-12</td>
+                  <td>180,49</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,376,816 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+                <!-- الملحق   -->
+                <tr>
+                  <td class="floor" rowspan="8">الملحق</td>
+                  <td>A-13</td>
+                  <td>121,98</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,269,120 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>A-14</td>
+                  <td>183,65</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,177,540 ريال</td>
+                  <td>سطح</td>
+                </tr>
+                <tr>
+                  <td>A-15</td>
+                  <td>189,04</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floor Plan Mapping Section -->
+    <section class="section-light" id="floorplan">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="table-responsive-custom">
+            <h2>المبنى B</h2>
+
+            <table>
+              <thead>
+                <tr>
+                  <th>الدور</th>
+                  <th>كود الوحدة</th>
+                  <th>المساحة</th>
+                  <th>محتوى الوحدة</th>
+                  <th>السعر</th>
+                  <th>ملاحظات</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <!-- الدور الأرضي -->
+                <tr>
+                  <td class="floor" rowspan="4">الدور الأرضي</td>
+                  <td>B-1</td>
+                  <td>154,7</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-2</td>
+                  <td>179,37</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,177,540 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-3</td>
+                  <td>200,95</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,159,424 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-4</td>
+                  <td>113,69</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,069,960 ريال</td>
+                  <td></td>
+                </tr>
+
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+
+                <!-- الدور الأول والثاني -->
+                <tr>
+                  <td class="floor" rowspan="8">الدور الأول والثاني</td>
+                  <td>B-5</td>
+                  <td>167,84</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,403,990 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>B-6</td>
+                  <td>180,65</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,222,830 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-7</td>
+                  <td>165,24</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-8</td>
+                  <td>170,59</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,385,874 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>B-9</td>
+                  <td>174,34</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,440,222 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>B-10</td>
+                  <td>165,32</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,259,062 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-11</td>
+                  <td>175,24</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,259,062 ريال</td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <td>B-12</td>
+                  <td>180,49</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,376,816 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+
+                <tr class="separator">
+                  <td colspan="6"></td>
+                </tr>
+
+                <!-- الملحق   -->
+                <tr>
+                  <td class="floor" rowspan="8">الملحق</td>
+                  <td>B-13</td>
+                  <td>121,98</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,269,120 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+                <tr>
+                  <td>B-14</td>
+                  <td>183,65</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,177,540 ريال</td>
+                  <td>سطح</td>
+                </tr>
+                <tr>
+                  <td>B-15</td>
+                  <td>189,04</td>
+                  <td>ثلاثة غرف نوم منها ماستر وصالة ومطبخ وثلاثة حمامات</td>
+                  <td>1,250,004 ريال</td>
+                  <td>بلكونة</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Google Maps Section -->
+    <section class="section-light" id="location">
+      <div class="container">
+        <h2 class="section-title text-center mb-4">موقعنا على الخريطة</h2>
+        <p class="section-description text-center mb-5">
+          يسعدنا زيارتكم في موقعنا بمدينة الرياض – حي النرجس
+        </p>
+
+        <div class="map-container">
+          <iframe
+              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d793.2836796524113!2d46.6859518!3d24.8279223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efb5eb8f74c43%3A0x158f1ae83854a167!2zUkFOQjQ0MzjYjCA0NDM4INi42YTZhdiMIDgwMDnYjCDYrdmKINin2YTZhtix2KzYs9iMINin2YTYsdmK2KfYtiAxMzMyNA!5e1!3m2!1sar!2ssa!4v1766243846298!5m2!1sar!2ssa"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
         </div>
       </div>
     </section>
@@ -478,46 +904,6 @@
             <i class="fab fa-whatsapp"></i>
             تواصل معنا عبر الواتساب
           </a>
-        </div>
-
-        <!-- Share Buttons Section -->
-        <div style="flex: 1; min-width: 300px; text-align: center">
-          <h2 class="section-title">مشاركة العقار</h2>
-          <p class="section-description mb-4">
-            شارك هذا العقار مع أصدقائك على مواقع التواصل الاجتماعي
-          </p>
-
-          <div style="display: flex; justify-content: center; gap: 20px">
-            <!-- WhatsApp -->
-            <a
-              href="https://api.whatsapp.com/send?text=شاهد هذا العقار الرائع: %20"
-              target="_blank"
-              class="download-btn"
-              style="background-color: #25d366"
-            >
-              <i class="fab fa-whatsapp"></i>
-            </a>
-
-            <!-- Facebook -->
-            <a
-              href="https://www.facebook.com/sharer/sharer.php?u="
-              target="_blank"
-              class="download-btn"
-              style="background-color: #1877f2"
-            >
-              <i class="fab fa-facebook-f"></i>
-            </a>
-
-            <!-- Twitter -->
-            <a
-              href="https://twitter.com/intent/tweet?url=&text=عقار رائع يستحق المشاهدة: "
-              target="_blank"
-              class="download-btn"
-              style="background-color: #1da1f2"
-            >
-              <i class="fab fa-twitter"></i>
-            </a>
-          </div>
         </div>
       </div>
     </section>

@@ -4,7 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>الموسى ريفييرا للتطوير العقاري - اطلب عقار</title>
-    <link rel="shortcut icon" href="images/شعار بدون كتابه.png" type="image/x-icon" />
+    <link
+      rel="shortcut icon"
+      href="images/شعار بدون كتابه.png"
+      type="image/x-icon"
+    />
     <link rel="stylesheet" href="unified-styles.css" />
     <!-- Font Awesome للأيقونات -->
     <link
@@ -102,10 +106,11 @@
     <header>
       <div class="container header-container">
         <div class="logo">
-          <a href="index.html">  <img
-            style="height: 60px"
-            src="images/شعار بدون كتابه.png"
-            alt="الموسى ريفييرا"
+          <a href="index.html">
+            <img
+              style="height: 60px"
+              src="images/شعار بدون كتابه.png"
+              alt="الموسى ريفييرا"
           /></a>
         </div>
         <button class="mobile-menu-toggle">
@@ -117,7 +122,7 @@
           <li><a href="index.html#about-us">من نحن</a></li>
           <li><a href="request-property.html">اطلب عقارك</a></li>
           <li><a href="index.html#services">خدماتنا</a></li>
-          <li><a href="register.html">تسجيل</a></li>
+          <!-- <li><a href="register.html">تسجيل</a></li> -->
           <li><a href="contact.html">تواصل معنا</a></li>
         </ul>
       </div>
@@ -146,43 +151,28 @@
                 </div>
 
                 <div class="form-group">
-              <label class="form-label">أحياء الرياض</label>
-              <select id="city-filter" class="form-control">
-                <option value="">كل الأحياء</option>
-                <option value="النرجس">حي النرجس</option>
-                <option value="الملقا">حي الملقا</option>
-                <option value="الياسمين">حي الياسمين</option>
-                <option value="قرطبه">حي قرطبه</option>
+                  <label class="form-label">أحياء الرياض</label>
+                  <select id="city-filter" class="form-control">
+                    <option value="">كل الأحياء</option>
+                    <option value="النرجس">حي النرجس</option>
+                    <option value="الملقا">حي الملقا</option>
+                    <option value="الياسمين">حي الياسمين</option>
+                    <option value="قرطبه">حي قرطبه</option>
+                  </select>
+                </div>
+
+                <div class="form-group">
+              <label class="form-label">نوع العقار</label>
+              <select id="propertyType" class="form-control">
+                <option value="">جميع الأنواع</option>
+                <option value="فيلا">فيلا</option>
+                <option value="شقة">شقة</option>
+                <option value="دبلكس">دبلكس</option>
+                <option value="تاون هاوس">تاون هاوس</option>
                 
               </select>
             </div>
 
-                <div class="form-group form-full-width">
-                  <label class="form-label">نوع العقار</label>
-                  <div class="radio-group">
-                    <label class="radio-option">
-                      <input
-                        type="radio"
-                        name="property_type"
-                        value="فيلا"
-                        required
-                      />
-                      <span><i class="fas fa-home"></i> فيلا</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="property_type" value="شقة" />
-                      <span><i class="fas fa-building"></i> شقة</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="property_type" value="روف" />
-                      <span><i class="fas fa-layer-group"></i> روف</span>
-                    </label>
-                    <label class="radio-option">
-                      <input type="radio" name="property_type" value="أرض" />
-                      <span><i class="fas fa-map"></i> أرض</span>
-                    </label>
-                  </div>
-                </div>
 
                 <div class="form-group form-full-width">
                   <button type="submit" class="btn btn-primary">
@@ -257,7 +247,11 @@
         <div class="footer-container">
           <div>
             <div class="footer-logo">
-              <img style="height: 150px;" src="images/شعار الموسي.png" alt="الموسى ريفييرا  للتطوير العقاري" />
+              <img
+                style="height: 150px"
+                src="images/شعار الموسي.png"
+                alt="الموسى ريفييرا  للتطوير العقاري"
+              />
             </div>
             <p class="footer-slogan">حيث يلتقي الطموح بالواقع!</p>
           </div>
@@ -270,7 +264,6 @@
               <li><a href="index.html#about-us">من نحن</a></li>
               <li><a href="request-property.html">اطلب عقارك</a></li>
               <li><a href="index.html#services">خدماتنا</a></li>
-              
             </ul>
           </div>
 
@@ -281,7 +274,7 @@
               <p>هاتف: 966500670503+</p>
               <p>هاتف:966598494952+</p>
               <a
-               href="https://wa.me/966530021919"
+                href="https://wa.me/966530021919"
                 class="btn btn-secondary whatsapp-button"
                 target="_blank"
               >
@@ -304,11 +297,40 @@
         </div>
 
         <div class="copyright">
-          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا  العقارية</p>
+          <p>© 2025 جميع الحقوق محفوظة لـ الموسى ريفييرا العقارية</p>
         </div>
       </div>
     </footer>
 
     <script src="unified-script.js"></script>
+
+   <script>
+  document
+    .getElementById("property-request-form")
+    .addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = document.getElementById("name").value;
+      const phone = document.getElementById("phone").value;
+      const city =
+        document.getElementById("city-filter").value || "غير محدد";
+      const propertyType =
+        document.getElementById("propertyType").value || "غير محدد";
+
+      const whatsappNumber = "966504187428"; // رقمك
+
+      const text =
+        `🏡 *طلب عقار جديد*%0A%0A` +
+        `👤 الاسم: ${name}%0A` +
+        `📞 رقم الجوال: ${phone}%0A` +
+        `📍 الحي: ${city}%0A` +
+        `🏠 نوع العقار: ${propertyType}`;
+
+       const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+
+      window.open(url, "_blank");
+    });
+</script>
+
   </body>
 </html>
