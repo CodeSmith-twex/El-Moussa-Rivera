@@ -9,7 +9,7 @@
       href="../images/شعار بدون كتابه.png"
       type="image/x-icon"
     />
-     <link rel="stylesheet" href="../unified-styles.css" />
+    <link rel="stylesheet" href="../unified-styles.css" />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -209,6 +209,133 @@
         height: auto;
       }
 
+      .villa-plans {
+        direction: rtl;
+        padding: 60px 20px;
+        background: #f6f3f1;
+        text-align: center;
+      }
+
+      .villa-info {
+        margin-bottom: 40px;
+      }
+
+      .villa-info h3 {
+        font-size: 26px;
+        margin-bottom: 10px;
+      }
+
+      .villa-info p {
+        font-size: 18px;
+        margin: 5px 0;
+      }
+
+      .villa-info span {
+        font-weight: bold;
+      }
+
+      .plans-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .plan {
+        background: #fff;
+        padding: 15px;
+        border-radius: 8px;
+      }
+
+      .plan img {
+        width: 100%;
+        height: auto;
+      }
+
+      .plan h4 {
+        margin-top: 15px;
+        font-size: 20px;
+      }
+
+      .unit-plan-section {
+        direction: rtl;
+        background: #f3f1ee;
+        padding: 60px 20px;
+        text-align: center;
+      }
+
+      /* الصور */
+      .unit-plans {
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+      }
+
+      .unit-plans img {
+        max-width: 420px;
+        width: 100%;
+        background: #fff;
+        padding: 15px;
+        border-radius: 6px;
+      }
+
+      /* بيانات الوحدة */
+      .unit-info p {
+        font-size: 18px;
+        margin: 10px 0 5px;
+      }
+
+      .unit-info h3,
+      .unit-info h4 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        font-weight: bold;
+      }
+
+       /* Google Map Styling */
+      .map-container {
+        width: 100%;
+        height: 450px;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      }
+
+      .map-container iframe {
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 576px) {
+        .map-container {
+          height: 300px;
+        }
+      }
+
+      /* موبايل */
+      @media (max-width: 768px) {
+        .unit-plans {
+          flex-direction: column;
+          gap: 25px;
+        }
+
+        .unit-plans img {
+          max-width: 100%;
+        }
+      }
+
+      /* 📱 موبايل */
+      @media (max-width: 768px) {
+        .plans-container {
+          grid-template-columns: 1fr;
+        }
+      }
+
       /* Responsive */
       @media (max-width: 768px) {
         .cover-section h1 {
@@ -223,7 +350,7 @@
           height: 300px;
         }
       }
-       @media (max-width: 992px) {
+      @media (max-width: 992px) {
         .nav-menu {
           position: absolute;
           top: 90px;
@@ -248,9 +375,8 @@
     </style>
   </head>
   <body>
-
-     <header>
-      <div style="text-decoration: none;" class="container header-container">
+    <header>
+      <div style="text-decoration: none" class="container header-container">
         <div class="logo">
           <a href="../index.html">
             <img
@@ -262,14 +388,50 @@
         <button class="mobile-menu-toggle">
           <i class="fas fa-bars"></i><i class="fas fa-times"></i>
         </button>
-        <ul  class="nav-menu">
-          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html">الرئيسية</a></li>
-          <li><a style="text-decoration: none; color: var(--primary)" href="../properties.html">العقارات</a></li>
-          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html#about-us">من نحن</a></li>
-          <li><a style="text-decoration: none; color: var(--primary)" href="../request-property.html">اطلب عقارك</a></li>
-          <li><a style="text-decoration: none; color: var(--primary)" href="../index.html#services">خدماتنا</a></li>
+        <ul class="nav-menu">
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../index.html"
+              >الرئيسية</a
+            >
+          </li>
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../properties.html"
+              >العقارات</a
+            >
+          </li>
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../index.html#about-us"
+              >من نحن</a
+            >
+          </li>
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../request-property.html"
+              >اطلب عقارك</a
+            >
+          </li>
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../index.html#services"
+              >خدماتنا</a
+            >
+          </li>
           <!-- <li><a style="text-decoration: none; color: var(--primary)" href="../register.html">تسجيل</a></li> -->
-          <li><a style="text-decoration: none; color: var(--primary)" href="../contact.html">تواصل معنا</a></li>
+          <li>
+            <a
+              style="text-decoration: none; color: var(--primary)"
+              href="../contact.html"
+              >تواصل معنا</a
+            >
+          </li>
         </ul>
       </div>
     </header>
@@ -331,7 +493,7 @@
                 <span class="detail-label">المساحة الإجمالية: </span>
                 <span>332 الاجمالي</span>
               </div>
-             
+
               <div class="detail-item">
                 <span class="detail-label">غرف النوم:</span>
                 <span>4 أجنحة رئيسية</span>
@@ -344,8 +506,6 @@
                 <span class="detail-label">مناطق المعيشة:</span>
                 <span>2 (الطابق الأرضي + الطابق الأول)</span>
               </div>
-             
-              
             </div>
           </div>
         </div>
@@ -358,11 +518,7 @@
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
             <div class="floor-plan-img">
-              <img
-                src="../images/تخطيط 4.png"
-                
-                alt="Second Floor Plan"
-              />
+              <img src="../images/تخطيط 4.png" alt="Second Floor Plan" />
             </div>
           </div>
           <div class="col-lg-6 order-lg-1">
@@ -392,116 +548,224 @@
       </div>
     </section>
 
+    <!-- وحدة 1 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-01</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>332 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,500,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/5b.png" alt="مخطط 1" />
+        <img src="../images/6b.jpg" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+     <!-- وحدة 2 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-02</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>351.89 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,050,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/9b.png" alt="مخطط 1" />
+        <img src="../images/8b.png" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+     <!-- وحدة 3 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-03</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>332.33 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,550,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/11b.jpg" alt="مخطط 1" />
+        <img src="../images/12b.jpg" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+     <!-- وحدة 4 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-04</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>358.72 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,450,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/13b.jpg" alt="مخطط 1" />
+        <img src="../images/14b.jpg" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+     <!-- وحدة 5 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-05</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>351.89 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,050,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/15b.jpg" alt="مخطط 1" />
+        <img src="../images/16b.jpg" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+     <!-- وحدة 6 -->
+    <section class="unit-plan-section">
+       <div class="unit-info">
+        <p>رقم الوحدة</p>
+        <h3>A-06</h3>
+
+        <p>المساحة الإجمالية</p>
+        <h4>351.89 م²</h4>
+
+        <p>السعر</p>
+        <h4>2,000,000</h4>
+      </div>
+
+
+
+      <div class="unit-plans">
+        <img src="../images/17b.jpg" alt="مخطط 1" />
+        <img src="../images/18b.jpg" alt="مخطط 2" />
+      </div>
+
+     
+    </section>
+    <!-- Google Maps Section -->
+    <section class="section-light" id="location">
+      <div class="container">
+        <h2 class="section-title text-center mb-4">موقعنا على الخريطة</h2>
+        <p class="section-description text-center mb-5">
+          يسعدنا زيارتكم في موقعنا بمدينة الرياض – حي النرجس
+        </p>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3172.5387892016756!2d46.675234!3d24.851170000000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjTCsDUxJzA0LjIiTiA0NsKwNDAnMzAuOCJF!5e1!3m2!1sar!2ssa!4v1766341996210!5m2!1sar!2ssa"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
     <!-- Additional Features Section -->
     <section class="section-green">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-4 mb-lg-0">
             <div class="img-container">
-              <img
-                src="../images/4.jpg"
-                alt="Living Room Interior"
-              />
+              <img src="../images/4.jpg" alt="Living Room Interior" />
             </div>
           </div>
-          <div class="col-lg-6" >
+          <div class="col-lg-6">
             <div class="floor-details">
-            <h2 class="section-title">وسائل الراحة المتميزة</h2>
-            <p class="section-description">
-              كل فيلا مجهزة بأحدث وسائل الراحة المصممة لتعزيز نمط حياتك. من
-              تقنيات المنازل الذكية إلى أنظمة توفير الطاقة، لقد فكرنا في كل شيء.
-            </p>
-            <p class="section-description">
-              <strong>الميزات المضمنة:</strong>
-            </p>
-            <ul class="section-description">
-            
-              <li>تكييف وتدفئة مركزية</li>
-              <li>اتصال إنترنت عالي السرعة عبر الألياف</li>
-              <li>نظام أمني مع كاميرات مراقبة</li>
-              <li>تركيب الألواح الشمسية</li>
-              
-              <li>مطبخ ممتاز مع أجهزة حديثة</li>
-            </ul>
-          </div>
+              <h2 class="section-title">وسائل الراحة المتميزة</h2>
+              <p class="section-description">
+                كل فيلا مجهزة بأحدث وسائل الراحة المصممة لتعزيز نمط حياتك. من
+                تقنيات المنازل الذكية إلى أنظمة توفير الطاقة، لقد فكرنا في كل
+                شيء.
+              </p>
+              <p class="section-description">
+                <strong>الميزات المضمنة:</strong>
+              </p>
+              <ul class="section-description">
+                <li>تكييف وتدفئة مركزية</li>
+                <li>اتصال إنترنت عالي السرعة عبر الألياف</li>
+                <li>نظام أمني مع كاميرات مراقبة</li>
+                <li>تركيب الألواح الشمسية</li>
+
+                <li>مطبخ ممتاز مع أجهزة حديثة</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-<!-- Contact + Share Sections Side by Side -->
-<section class="section-light">
-  <div class="container" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 30px; flex-wrap: wrap;">
-
-    <!-- Contact Section -->
-    <div style="flex: 1; min-width: 300px; text-align: center;">
-      <h2 class="section-title">تواصل معنا</h2>
-      <p class="section-description mb-4">
-        للرد علي جميع الاستفسارات.
-      </p>
-
-      <a
-        href="https://wa.me/966530021919"
-        class="download-btn"
-        target="_blank"
+    <!-- Contact + Share Sections Side by Side -->
+    <section class="section-light">
+      <div
+        class="container"
+        style="
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          gap: 30px;
+          flex-wrap: wrap;
+        "
       >
-        <i class="fab fa-whatsapp"></i>
-        تواصل معنا عبر الواتساب
-      </a>
-    </div>
+        <!-- Contact Section -->
+        <div style="flex: 1; min-width: 300px; text-align: center">
+          <h2 class="section-title">تواصل معنا</h2>
+          <p class="section-description mb-4">للرد علي جميع الاستفسارات.</p>
 
-    <!-- Share Buttons Section -->
-    <div style="flex: 1; min-width: 300px; text-align: center;">
-      <h2 class="section-title">مشاركة العقار</h2>
-      <p class="section-description mb-4">
-        شارك هذا العقار مع أصدقائك على مواقع التواصل الاجتماعي
-      </p>
-
-      <div style="display: flex; justify-content: center; gap: 20px;">
-
-        <!-- WhatsApp -->
-        <a
-          href="https://api.whatsapp.com/send?text=شاهد هذا العقار الرائع: %20"
-          target="_blank"
-          class="download-btn"
-          style="background-color: #25d366;"
-        >
-          <i class="fab fa-whatsapp"></i>
-        </a>
-
-        <!-- Facebook -->
-        <a
-          href="https://www.facebook.com/sharer/sharer.php?u="
-          target="_blank"
-          class="download-btn"
-          style="background-color: #1877f2;"
-        >
-          <i class="fab fa-facebook-f"></i>
-        </a>
-
-        <!-- Twitter -->
-        <a
-          href="https://twitter.com/intent/tweet?url=&text=عقار رائع يستحق المشاهدة: "
-          target="_blank"
-          class="download-btn"
-          style="background-color: #1da1f2;"
-        >
-          <i class="fab fa-twitter"></i>
-        </a>
+          <a
+            href="https://wa.me/966530021919"
+            class="download-btn"
+            target="_blank"
+          >
+            <i class="fab fa-whatsapp"></i>
+            تواصل معنا عبر الواتساب
+          </a>
+        </div>
 
       </div>
-    </div>
+    </section>
 
-  </div>
-</section>
-
-
-
-    
-      
     <!-- Footer -->
     <footer>
-      <div style="text-decoration: none;" class="container">
+      <div style="text-decoration: none" class="container">
         <div class="footer-container">
           <div>
             <div class="footer-logo">
@@ -512,11 +776,29 @@
           <div>
             <h3 class="footer-title">روابط سريعة</h3>
             <ul class="footer-links">
-              <li><a style="text-decoration: none;" href="index.html">الرئيسية</a></li>
-              <li><a style="text-decoration: none;" href="projects.html">العقارات</a></li>
-              <li><a style="text-decoration: none;" href="index.html#about-us">من نحن</a></li>
-              <li><a style="text-decoration: none;" href="request-property.html">اطلب عقارك</a></li>
-              <li><a style="text-decoration: none;" href="index.html#services">خدماتنا</a></li>
+              <li>
+                <a style="text-decoration: none" href="index.html">الرئيسية</a>
+              </li>
+              <li>
+                <a style="text-decoration: none" href="projects.html"
+                  >العقارات</a
+                >
+              </li>
+              <li>
+                <a style="text-decoration: none" href="index.html#about-us"
+                  >من نحن</a
+                >
+              </li>
+              <li>
+                <a style="text-decoration: none" href="request-property.html"
+                  >اطلب عقارك</a
+                >
+              </li>
+              <li>
+                <a style="text-decoration: none" href="index.html#services"
+                  >خدماتنا</a
+                >
+              </li>
             </ul>
           </div>
           <div>
@@ -529,7 +811,6 @@
                 href="https://wa.me/966530021919"
                 class="btn btn-secondary whatsapp-button"
                 target="_blank"
-                
               >
                 <i class="fab fa-whatsapp"></i>
                 تواصل معنا عبر الواتساب
@@ -554,26 +835,28 @@
       </div>
     </footer>
 
-     <script src="../unified-script.js"></script>
+    <script src="../unified-script.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-  // الحصول على رابط الصفحة الحالي
-  const currentURL = window.location.href;
+    <script>
+      // الحصول على رابط الصفحة الحالي
+      const currentURL = window.location.href;
 
-  // تحديث روابط المشاركة
-  document.querySelectorAll("a").forEach((btn) => {
-    if (btn.href.includes("whatsapp")) {
-      btn.href += encodeURIComponent(currentURL);
-    }
-    if (btn.href.includes("facebook")) {
-      btn.href += encodeURIComponent(currentURL);
-    }
-    if (btn.href.includes("twitter")) {
-      btn.href = btn.href.replace("url=", "url=" + encodeURIComponent(currentURL));
-    }
-  });
-</script>
-
+      // تحديث روابط المشاركة
+      document.querySelectorAll("a").forEach((btn) => {
+        if (btn.href.includes("whatsapp")) {
+          btn.href += encodeURIComponent(currentURL);
+        }
+        if (btn.href.includes("facebook")) {
+          btn.href += encodeURIComponent(currentURL);
+        }
+        if (btn.href.includes("twitter")) {
+          btn.href = btn.href.replace(
+            "url=",
+            "url=" + encodeURIComponent(currentURL)
+          );
+        }
+      });
+    </script>
   </body>
 </html>
