@@ -374,6 +374,54 @@
           display: block;
         }
       }
+       .warranty-box .section-title {
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .warranty-box .section-description {
+        font-size: 17px;
+        margin-bottom: 25px;
+      }
+
+      .warranty-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 35px; /* مسافات أصغر */
+      }
+
+      .warranty-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 16px;
+      }
+
+      .warranty-item i {
+        font-size: 22px;
+        color: #8a7a6a;
+        margin-top: 3px;
+      }
+
+      .warranty-item .years {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 2px;
+      }
+
+      .warranty-item p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      /* موبايل */
+      @media (max-width: 768px) {
+        .warranty-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -440,7 +488,7 @@
     <!-- Cover Section -->
     <div class="cover-section" id="home">
       <div class="container">
-        <h1>مجموعة فلل دبلكس الفاخرة</h1>
+        <h1> فلل دبلكس فاخرة</h1>
         <p>استمتع بالحياة العصرية في انسجام مع الطبيعة</p>
       </div>
     </div>
@@ -474,59 +522,24 @@
     <!-- Brochure & Floor Details Section -->
     <section class="section-green" id="details">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 mb-4">
-            <div class="brochure-card">
-              <h3 class="mb-4"><i class="fas fa-file-pdf"></i>معاينة الكتيب</h3>
-              <p class="mb-4">
-                احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
-                والمرافق والأسعار. انظر الي كتيبنا الشامل الآن. .
-              </p>
+        <div class="brochure-card">
+          <h3 class="mb-4"><i class="fas fa-file-pdf"></i>معاينة الكتيب</h3>
+          <p class="mb-4">
+            احصل على معلومات مفصلة حول مشروعنا السكني، بما في ذلك المواصفات
+            والمرافق والأسعار. انظر الي كتيبنا الشامل الآن. .
+          </p>
 
-              <a class="download-btn" href="../pdf/prop3.pdf" target="_blank">
-                <i class="fas fa-download"></i> معاينة الكتيب PDF</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-6 mb-4">
-            <div class="floor-details">
-              <h4><i class="fas fa-ruler-combined"></i>مواصفات الأرضية</h4>
-              <div class="detail-item">
-                <span class="detail-label">المساحة الإجمالية: </span>
-                <span>3,500 قدم مربع</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">المساحة المبنية:</span>
-                <span>3,200 قدم مربع</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">غرف النوم:</span>
-                <span>4 أجنحة رئيسية</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">الحمامات:</span>
-                <span>5 حمامات كاملة</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">مناطق المعيشة:</span>
-                <span>2 (الطابق الأرضي + الطابق الأول)</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">موقف السيارات:</span>
-                <span>مرآب لسيارتين</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">منطقة الحديقة:</span>
-                <span>1,200 قدم مربع</span>
-              </div>
-            </div>
-          </div>
+          <a class="download-btn" href="../pdf/prop3.pdf" target="_blank">
+            <i class="fas fa-download"></i> معاينة الكتيب PDF</a
+          >
         </div>
+
+       
       </div>
     </section>
 
     <!-- Floor Plan Mapping Section -->
-    <section class="section-light" id="floorplan">
+    <!-- <section class="section-light" id="floorplan">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
@@ -559,7 +572,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!--villa 1 -->
     <section class="villa-plans">
@@ -693,24 +706,70 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="floor-details">
-              <h2 class="section-title">وسائل الراحة المتميزة</h2>
+            <div class="floor-details warranty-box">
+              <h2 class="section-title">الضمانات</h2>
               <p class="section-description">
-                كل فيلا مجهزة بأحدث وسائل الراحة المصممة لتعزيز نمط حياتك. من
-                تقنيات المنازل الذكية إلى أنظمة توفير الطاقة، لقد فكرنا في كل
-                شيء.
+                تلتزم الموسى ريفييرا بتقديم أفضل الضمانات التي تلبي أعلى معايير
+                الجودة.
               </p>
-              <p class="section-description">
-                <strong>الميزات المضمنة:</strong>
-              </p>
-              <ul class="section-description">
-                <li>تكييف وتدفئة مركزية</li>
-                <li>اتصال إنترنت عالي السرعة عبر الألياف</li>
-                <li>نظام أمني مع كاميرات مراقبة</li>
-                <li>تركيب الألواح الشمسية</li>
-                <li>حدائق ذات مناظر طبيعية مع ري</li>
-                <li>مطبخ ممتاز مع أجهزة حديثة</li>
-              </ul>
+
+              <div class="warranty-grid">
+                <div class="warranty-item">
+                  <i class="fa-solid fa-bolt"></i>
+                  <div>
+                    <span class="years">20 سنة</span>
+                    <p>قواطع الكهرباء الداخلية<br />(شركة الفنار)</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-faucet"></i>
+                  <div>
+                    <span class="years">15 سنة</span>
+                    <p>تمديدات السباكة</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-door-closed"></i>
+                  <div>
+                    <span class="years">10 سنوات</span>
+                    <p>الأبواب WPC</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-layer-group"></i>
+                  <div>
+                    <span class="years">10 سنوات</span>
+                    <p>العزل</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <div>
+                    <span class="years">سنتين</span>
+                    <p>الإنارة</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-sink"></i>
+                  <div>
+                    <span class="years">سنة</span>
+                    <p>الأدوات الصحية</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-snowflake"></i>
+                  <div>
+                    <span class="years">سنتين</span>
+                    <p>التكييف</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

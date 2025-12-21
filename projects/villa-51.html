@@ -347,6 +347,54 @@
           display: block;
         }
       }
+      .warranty-box .section-title {
+        font-size: 40px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+
+      .warranty-box .section-description {
+        font-size: 17px;
+        margin-bottom: 25px;
+      }
+
+      .warranty-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 35px; /* مسافات أصغر */
+      }
+
+      .warranty-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        font-size: 16px;
+      }
+
+      .warranty-item i {
+        font-size: 22px;
+        color: #8a7a6a;
+        margin-top: 3px;
+      }
+
+      .warranty-item .years {
+        display: block;
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 2px;
+      }
+
+      .warranty-item p {
+        margin: 0;
+        line-height: 1.4;
+      }
+
+      /* موبايل */
+      @media (max-width: 768px) {
+        .warranty-grid {
+          grid-template-columns: 1fr;
+        }
+      }
     </style>
   </head>
   <body>
@@ -421,7 +469,7 @@
     <!-- Cover Section -->
     <div class="cover-section" id="home">
       <div class="container">
-        <h1>مجموعة شقق فاخرة</h1>
+        <h1>شقق سكنية فاخرة</h1>
         <p>استمتع بالحياة العصرية في انسجام مع الطبيعة</p>
       </div>
     </div>
@@ -467,36 +515,12 @@
           >
         </div>
 
-        <!-- <div class="col-lg-6 mb-4">
-            <div class="floor-details">
-              <h4><i class="fas fa-ruler-combined"></i>مواصفات الأرضية</h4>
-              <div class="detail-item">
-                <span class="detail-label">المساحة الإجمالية: </span>
-                <span>3,500 قدم مربع</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">المساحة المبنية:</span>
-                <span>3,200 قدم مربع</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">غرف النوم:</span>
-                <span>3 غرف </span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">الحمامات:</span>
-                <span>3 حمامات كاملة</span>
-              </div>
-              <div class="detail-item">
-                <span class="detail-label">مناطق المعيشة:</span>
-                <span>4 (الطابق الأرضي + الطابق الأول والثاني +ملحق)</span>
-              </div>
-            </div>
-          </div> -->
+       
       </div>
     </section>
 
     <!-- Floor Plan Mapping Section -->
-    <section class="section-light" id="floorplan">
+    <!-- <section class="section-light" id="floorplan">
       <div class="container">
         <div class="row align-items-center">
           <div class="col-lg-6 order-lg-2 mb-4 mb-lg-0">
@@ -529,7 +553,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
 
     <!-- Floor Plan Mapping Section -->
     <section class="section-light" id="floorplan">
@@ -836,7 +860,7 @@
 
         <div class="map-container">
           <iframe
-              src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d793.2836796524113!2d46.6859518!3d24.8279223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efb5eb8f74c43%3A0x158f1ae83854a167!2zUkFOQjQ0MzjYjCA0NDM4INi42YTZhdiMIDgwMDnYjCDYrdmKINin2YTZhtix2KzYs9iMINin2YTYsdmK2KfYtiAxMzMyNA!5e1!3m2!1sar!2ssa!4v1766243846298!5m2!1sar!2ssa"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d793.2836796524113!2d46.6859518!3d24.8279223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2efb5eb8f74c43%3A0x158f1ae83854a167!2zUkFOQjQ0MzjYjCA0NDM4INi42YTZhdiMIDgwMDnYjCDYrdmKINin2YTZhtix2KzYs9iMINin2YTYsdmK2KfYtiAxMzMyNA!5e1!3m2!1sar!2ssa!4v1766243846298!5m2!1sar!2ssa"
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
             allowfullscreen
@@ -855,25 +879,70 @@
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="floor-details">
-              <h2 class="section-title">الضمانات من مشروع 51</h2>
+            <div class="floor-details warranty-box">
+              <h2 class="section-title">الضمانات</h2>
               <p class="section-description">
-                كل شقة مجهزة بأحدث وسائل الراحة المصممة لتعزيز نمط حياتك. من
-                تقنيات المنازل الذكية إلى أنظمة توفير الطاقة، لقد فكرنا في كل
-                شيء.
+                تلتزم الموسى ريفييرا بتقديم أفضل الضمانات التي تلبي أعلى معايير
+                الجودة.
               </p>
-              <p class="section-description">
-                <strong>الميزات المضمنة:</strong>
-              </p>
-              <ul class="section-description">
-                <li>تكييف وتدفئة مركزية</li>
-                <li>قريبة من المدارس والجامعات</li>
 
-                <li>نظام أمني مع كاميرات مراقبة</li>
-                <li>تركيب الألواح الشمسية</li>
+              <div class="warranty-grid">
+                <div class="warranty-item">
+                  <i class="fa-solid fa-bolt"></i>
+                  <div>
+                    <span class="years">20 سنة</span>
+                    <p>قواطع الكهرباء الداخلية<br />(شركة الفنار)</p>
+                  </div>
+                </div>
 
-                <li>مطبخ ممتاز مع أجهزة حديثة</li>
-              </ul>
+                <div class="warranty-item">
+                  <i class="fa-solid fa-faucet"></i>
+                  <div>
+                    <span class="years">15 سنة</span>
+                    <p>تمديدات السباكة</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-door-closed"></i>
+                  <div>
+                    <span class="years">10 سنوات</span>
+                    <p>الأبواب WPC</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-layer-group"></i>
+                  <div>
+                    <span class="years">10 سنوات</span>
+                    <p>العزل</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-lightbulb"></i>
+                  <div>
+                    <span class="years">سنتين</span>
+                    <p>الإنارة</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-sink"></i>
+                  <div>
+                    <span class="years">سنة</span>
+                    <p>الأدوات الصحية</p>
+                  </div>
+                </div>
+
+                <div class="warranty-item">
+                  <i class="fa-solid fa-snowflake"></i>
+                  <div>
+                    <span class="years">سنتين</span>
+                    <p>التكييف</p>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
