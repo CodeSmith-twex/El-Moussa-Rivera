@@ -671,7 +671,7 @@ footer {
     padding: 1rem 0;
     box-shadow: var(--shadow-light);
     /* إخفاء القائمة خارج الشاشة */
-    transform: translateY(-120%);
+    transform: translateY(-150%);
     transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
     z-index: -1; /* لتكون خلف الهيدر */
   }
