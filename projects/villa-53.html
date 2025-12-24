@@ -374,7 +374,7 @@
           display: block;
         }
       }
-       .warranty-box .section-title {
+      .warranty-box .section-title {
         font-size: 40px;
         font-weight: 800;
         margin-bottom: 10px;
@@ -420,6 +420,74 @@
       @media (max-width: 768px) {
         .warranty-grid {
           grid-template-columns: 1fr;
+        }
+      }
+
+      .nearby-section {
+        background-color: #f4f7f6;
+        padding: 70px 0;
+      }
+
+      .nearby-title {
+        font-size: 38px;
+        font-weight: 800;
+        color: var(--dark-brown);
+      }
+
+      .nearby-desc {
+        color: #6f8488;
+        font-size: 17px;
+      }
+      /* لون الأيقونات حسب لون الموقع */
+      .icon-box {
+        background-color: rgb(245, 240, 240); /* أخضر فاتح */
+        color: #ffffff; /* اللون الأساسي للموقع */
+      }
+
+      /* تأكيد لون الأيقونة */
+      .icon-box i {
+        color: #8a7a6a;
+      }
+
+      .nearby-card {
+        background: #fff;
+        border: 1px solid #e3e8e7;
+        border-radius: 14px;
+        padding: 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: 0.3s ease;
+      }
+
+      .nearby-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+      }
+
+      .icon-box {
+        padding: 10px;
+        border-radius: 12px;
+        color: #2f4447;
+        font-size: 20px;
+      }
+
+      .text-box h6 {
+        margin: 0;
+        font-size: 16px;
+        font-weight: 700;
+        color: #2f4447;
+      }
+
+      .text-box span {
+        font-size: 14px;
+        color: #7a8b8e;
+      }
+
+      /* موبايل */
+      @media (max-width: 768px) {
+        .nearby-title {
+          font-size: 30px;
         }
       }
     </style>
@@ -474,7 +542,7 @@
               >خدماتنا</a
             >
           </li>
-          <!-- <li><a style="text-decoration: none; color: var(--primary)" href="../register.html">تسجيل</a></li> -->
+         
           <li>
             <a
               style="text-decoration: none; color: var(--primary)"
@@ -488,7 +556,7 @@
     <!-- Cover Section -->
     <div class="cover-section" id="home">
       <div class="container">
-        <h1> فلل دبلكس فاخرة-53</h1>
+        <h1>فلل دبلكس فاخرة-53</h1>
         <p>استمتع بالحياة العصرية في انسجام مع الطبيعة</p>
       </div>
     </div>
@@ -533,8 +601,6 @@
             <i class="fas fa-download"></i> معاينة الكتيب PDF</a
           >
         </div>
-
-       
       </div>
     </section>
 
@@ -659,11 +725,10 @@
 
       <div class="single-plan-image">
         <img src="../images/16n.png" alt="الدور الأرضي" />
-        
       </div>
     </section>
 
-     <!--villa 5 -->
+    <!--villa 5 -->
     <section class="single-plan-section">
       <div class="single-plan-info">
         <h3>بنتن هاوس</h3>
@@ -673,7 +738,6 @@
 
       <div class="single-plan-image">
         <img src="../images/17n.png" alt="الدور الأرضي" />
-        
       </div>
     </section>
 
@@ -682,7 +746,7 @@
       <div class="container">
         <h2 class="section-title text-center mb-4">موقعنا على الخريطة</h2>
         <p class="section-description text-center mb-5">
-          يسعدنا زيارتكم في موقعنا بمدينة الرياض – حي النرجس
+          يسعدنا زيارتكم في موقعنا بمدينة الرياض – حي الملقا
         </p>
 
         <div class="map-container">
@@ -695,102 +759,93 @@
         </div>
       </div>
     </section>
-<section class="py-5 bg-light" dir="rtl">
-  <div class="container">
-    <div class="text-center mb-5">
-      <h2 class="fw-bold">المواقع القريبة</h2>
-      <p class="text-muted">نحن نقع في قلب الرياض، بالقرب من أهم المعالم</p>
-    </div>
 
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-signpost-split text-primary" viewBox="0 0 16 16">
-              <path d="M7 7V1.414a1 1 0 0 1 2 0V2h5a1 1 0 0 1 .8.4l.975 1.3a.5.5 0 0 1 0 .6L14.8 5.6a1 1 0 0 1-.8.4H9v10H7v-5H2a1 1 0 0 1-.8-.4L.225 9.3a.5.5 0 0 1 0-.6L1.2 7.4a1 1 0 0 1 .8-.4h5zM3.5 8.5 2.375 10 3.5 11.5H8v-3H3.5zm9.125-5L11.5 2H9v3h2.625l1.125-1.5z"/>
-            </svg>
+    <!-- Nearby Locations Section -->
+    <section class="nearby-section" dir="rtl">
+      <div class="container">
+        <div class="text-center mb-5">
+          <h2 class="nearby-title">المواقع القريبة</h2>
+          <p class="nearby-desc">
+            نحن نقع في قلب الرياض، بالقرب من أهم المعالم
+          </p>
+        </div>
+
+        <div class="row g-4">
+          <!-- item -->
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-road"></i>
+              </div>
+              <div class="text-box">
+                <h6>1 كم</h6>
+                <span>طريق الملك سلمان</span>
+              </div>
+            </div>
           </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">7 كم</h6>
-            <span class="text-muted">طريق الملك سلمان</span>
+
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-road"></i>
+              </div>
+              <div class="text-box">
+                <h6>3 كم</h6>
+                <span>طريق الملك فهد </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="text-box">
+                <h6>15 كم</h6>
+                <span>جامعة الأميرة نورة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-cube"></i>
+              </div>
+              <div class="text-box">
+                <h6>3 كم</h6>
+                <span>مشروع المكعب</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div class="text-box">
+                <h6>7 كم</h6>
+                <span>جامعة المعرفة </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="nearby-card">
+              <div class="icon-box">
+                <i class="fa-solid fa-plane"></i>
+              </div>
+              <div class="text-box">
+                <h6>20 كم</h6>
+                <span>مطار الملك خالد الدولي</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-geo-alt text-primary" viewBox="0 0 16 16">
-              <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
-              <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
-            </svg>
-          </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">1 كم</h6>
-            <span class="text-muted">طريق أنس بن مالك</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-mortarboard text-primary" viewBox="0 0 16 16">
-              <path d="M8.211 2.047a.5.5 0 0 0-.422 0l-7.5 3.5a.5.5 0 0 0 .025.917l7.5 3a.5.5 0 0 0 .372 0L14 7.14V13a1 1 0 0 0-1 1v2h3v-2a1 1 0 0 0-1-1V6.739l.686-.274a.5.5 0 0 0 .025-.917l-7.5-3.5z"/>
-            </svg>
-          </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">7 كم</h6>
-            <span class="text-muted">جامعة الأميرة نورة</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-box text-primary" viewBox="0 0 16 16">
-              <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5 8 5.961 14.154 3.5 8.186 1.113zM15 4.239l-7 2.8v7.922l7-2.8V4.239zM1 4.239v7.922l7 2.8V7.039l-7-2.8z"/>
-            </svg>
-          </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">20 كم</h6>
-            <span class="text-muted">مشروع المكعب</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-building text-primary" viewBox="0 0 16 16">
-              <path d="M4 2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zM4 5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM7.5 5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zM4.5 8a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1zm2.5.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5v-1zm3.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5h-1z"/>
-              <path d="M2 1a1 1 0 0 1 1-1h10a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V1zm11 0H3v14h3v-2.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5V15h3V1z"/>
-            </svg>
-          </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">1 كم</h6>
-            <span class="text-muted">معهد الإدارة العامة</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-md-4">
-        <div class="d-flex align-items-center p-3 bg-white border rounded shadow-sm">
-          <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded">
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-airplane text-primary" viewBox="0 0 16 16">
-              <path d="M6.428 1.151C6.708.591 7.303 0 8 0s1.292.592 1.572 1.151C9.861 1.73 10 2.431 10 3v3.691l2.77 2.57c.23.212.33.523.27.828l-.568 2.842c-.042.21-.186.384-.37.478l-1.173.6c-.196.1-.414.068-.584-.08L8.5 13.26V14.5l.5.5a.5.5 0 0 1 0 1l-2 0a.5.5 0 0 1 0-1l.5-.5v-1.24l-1.844.766a.5.5 0 0 1-.584.08l-1.173-.6a.5.5 0 0 1-.37-.478l-.568-2.842a.5.5 0 0 1 .27-.828L5 6.691V3c0-.569.139-1.27.428-1.849Z"/>
-            </svg>
-          </div>
-          <div class="ms-3 me-3">
-            <h6 class="mb-0 fw-bold">20 كم</h6>
-            <span class="text-muted">مطار الملك خالد الدولي</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
     <!-- Additional Features Section -->
     <section class="section-green">
@@ -913,28 +968,33 @@
           </div>
           <div>
             <h3 class="footer-title">روابط سريعة</h3>
-            <ul class="footer-links">
+           <ul class="footer-links">
               <li>
-                <a style="text-decoration: none" href="index.html">الرئيسية</a>
+                <a style="text-decoration: none" href="../index.html">الرئيسية</a>
               </li>
               <li>
-                <a style="text-decoration: none" href="projects.html"
-                  >العقارات</a
+                <a style="text-decoration: none" href="../properties.html"
+                  >مشاريعنا</a
                 >
               </li>
               <li>
-                <a style="text-decoration: none" href="index.html#about-us"
+                <a style="text-decoration: none" href="../index.html#about-us"
                   >من نحن</a
                 >
               </li>
               <li>
-                <a style="text-decoration: none" href="request-property.html"
+                <a style="text-decoration: none" href="../request-property.html"
                   >اطلب عقارك</a
                 >
               </li>
               <li>
-                <a style="text-decoration: none" href="index.html#services"
+                <a style="text-decoration: none" href="../index.html#services"
                   >خدماتنا</a
+                >
+              </li>
+                <li>
+                <a style="text-decoration: none" href="../contact.html"
+                  >تواصل معنا</a
                 >
               </li>
             </ul>
