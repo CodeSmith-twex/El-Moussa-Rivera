@@ -15,19 +15,28 @@
     <!-- OG -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content="الموسى ريفييرا" />
-    <meta property="og:description" content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد." />
-    <meta property="og:image"
-        content="https://almusariviera.sa" />
+    <meta
+      property="og:description"
+      content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد."
+    />
+    <meta
+      property="og:image"
+      content="https://almusariviera.sa/images/شعار الموسي.png"
+    />
     <meta property="og:url" content="https://almusariviera.sa/" />
-            <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="الموسى ريفييرا">
-    <meta name="twitter:description" content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد.">
-    <meta name="twitter:image"
-        content="https://almusariviera.sa">
-    <meta name="twitter:site" content="@almusariviera">
-    <meta name="twitter:image:alt"
-        content="almusa riviera logo">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="الموسى ريفييرا" />
+    <meta
+      name="twitter:description"
+      content="الموسى ريفييرا للتطوير العقاري - حلول عقارية متكاملة في مكان واحد."
+    />
+    <meta
+      name="twitter:image"
+      content="https://almusariviera.sa/images/شعار الموسي.png"
+    />
+    <meta name="twitter:site" content="@almusariviera" />
+    <meta name="twitter:image:alt" content="almusa riviera logo" />
     <link
       rel="shortcut icon"
       href="images/شعار بدون كتابه.png"
@@ -117,7 +126,8 @@
           /></a>
         </div>
         <button class="mobile-menu-toggle">
-           <i class="fas fa-bars"></i><i style="margin-right: -20px;" class="fas fa-times"></i>
+          <i class="fas fa-bars"></i
+          ><i style="margin-right: -20px" class="fas fa-times"></i>
         </button>
         <ul class="nav-menu">
           <li><a href="index.html">الرئيسية</a></li>
@@ -275,11 +285,8 @@
                   class="partner-logo"
                 />
               </div>
-              
             </div>
           </div>
-          
-  
         </div>
       </div>
     </section>
@@ -458,52 +465,56 @@
       }, 4000);
     </script>
 
-  <script>
-  document
-    .getElementById("contact-form-short")
-    .addEventListener("submit", function (e) {
-      e.preventDefault();
+    <script>
+      document
+        .getElementById("contact-form-short")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
 
-      const name = document.getElementById("contact-name").value;
-      const phone = document.getElementById("contact-phone").value;
-      const interest = document.getElementById("contact-interest").value;
+          const name = document.getElementById("contact-name").value;
+          const phone = document.getElementById("contact-phone").value;
+          const interest = document.getElementById("contact-interest").value;
 
-      let interestText = "";
-      switch (interest) {
-        case "buy":
-          interestText = "شراء عقار";
-          break;
-        case "sell":
-          interestText = "بيع عقار";
-          break;
-        case "rent":
-          interestText = "استئجار عقار";
-          break;
-        case "invest":
-          interestText = "استثمار عقاري";
-          break;
-        default:
-          interestText = "غير محدد";
-      }
+          let interestText = "";
+          switch (interest) {
+            case "buy":
+              interestText = "شراء عقار";
+              break;
+            case "sell":
+              interestText = "بيع عقار";
+              break;
+            case "rent":
+              interestText = "استئجار عقار";
+              break;
+            case "invest":
+              interestText = "استثمار عقاري";
+              break;
+            default:
+              interestText = "غير محدد";
+          }
 
-      const whatsappNumber = "966530021919"; // رقمك
-      // 966530021919
-      // نص عادي بدون إيموجي وبدون %0A
-      const message =
-        "طلب تواصل من مهتم\n\n" +
-        "الاسم: " + name + "\n" +
-        "الجوال: " + phone + "\n" +
-        "الاهتمام: " + interestText;
+          const whatsappNumber = "966530021919"; // رقمك
+          // 966530021919
+          // نص عادي بدون إيموجي وبدون %0A
+          const message =
+            "طلب تواصل من مهتم\n\n" +
+            "الاسم: " +
+            name +
+            "\n" +
+            "الجوال: " +
+            phone +
+            "\n" +
+            "الاهتمام: " +
+            interestText;
 
-      const url =
-        "https://wa.me/" +
-        whatsappNumber +
-        "?text=" +
-        encodeURIComponent(message);
+          const url =
+            "https://wa.me/" +
+            whatsappNumber +
+            "?text=" +
+            encodeURIComponent(message);
 
-      window.open(url, "_blank");
-    });
-</script>
-
+          window.open(url, "_blank");
+        });
+    </script>
   </body>
 </html>
